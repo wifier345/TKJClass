@@ -1548,13 +1548,21 @@ footer {
     }
     
     .blog-featured-image {
-        height: 250px;
+        height: 100px;
+    }
+
+    .featured-blog {
+        gap: 10px;
+    }
+
+    .featured-blog-image {
+        min-height: 100px;
     }
     
     .blogs-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .blog-header h1 {
         font-size: 2rem;
     }
