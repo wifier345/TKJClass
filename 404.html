@@ -113,10 +113,10 @@
             <h1 class="error-code">404</h1>
             <h2 class="error-message">Page Not Found</h2>
             <p class="error-description">Ups! Halaman yang Anda cari sepertinya sudah keluar dari jalur. Jangan khawatir, bahkan siswa terbaik pun terkadang tersesat.</p>
+            <!-- Add this button to the error-actions div, right after your existing buttons -->
             <div class="error-actions">
-                <a href="index.html" class="primary"><i class="fas fa-home"></i> Kembali ke Beranda</a>
-                <a href="blogs/index.html" class="primary"><i class="fas fa-home"></i> Halaman Blogs</a>
-                <a href="index.html#contact" class="secondary"><i class="fas fa-envelope"></i> Hubungi Kami</a>
+                <a href="index.html#contact" class="primary"><i class="fas fa-envelope"></i> Hubungi Kami</a>
+                <a href="#" id="backButton" class="secondary"><i class="fas fa-arrow-left"></i> Kembali</a>
             </div>
         </div>
     </main>
@@ -159,5 +159,37 @@
     <!-- JavaScript Files -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
-</body>
+
+    <!-- Back Button Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backButton = document.getElementById('backButton');
+            
+            // Check if there's a referrer (previous page)
+            if (document.referrer) {
+                // Show the back button
+                backButton.style.display = 'inline-block';
+                
+                // Set the back button to go to the previous page
+                backButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = document.referrer;
+                });
+                
+                // Add hover effect to show the previous page URL
+                backButton.addEventListener('mouseover', function() {
+                    // Extract domain and path for display
+                    const referrerUrl = new URL(document.referrer);
+                    const displayUrl = referrerUrl.pathname.split('/').pop() || 'homepage';
+                    
+                    // Show tooltip with the page name
+                    this.setAttribute('title', 'Back to: ' + displayUrl);
+                });
+            } else {
+                // If no referrer, hide the back button
+                backButton.style.display = 'none';
+            }
+        });
+    </script>
+    </body>
 </html>
