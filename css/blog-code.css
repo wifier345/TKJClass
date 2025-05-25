@@ -1,0 +1,159 @@
+/* Styling untuk code blocks */
+.code-container {
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 15px 15px 15px 20px;
+    border-left: 4px solid var(--primary-color);
+    font-family: 'Consolas', monospace;
+    overflow: hidden;
+    max-height: 400px;
+}
+
+.code-container pre {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    white-space: pre;
+    max-width: 100%;
+}
+
+.code-container code {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: auto;
+    padding-right: 40px;
+}
+
+.code-container.expandable {
+    position: relative;
+}
+
+.code-container.expandable:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(transparent, #f5f5f5);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.code-container.collapsed {
+    max-height: 200px;
+}
+
+.code-container.collapsed:after {
+    opacity: 1;
+}
+
+.expand-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.copy-success {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+}
+
+/* Syntax highlighting colors - similar to the image */
+.token.comment { color: #6a9955; }
+.token.string { color: #ce9178; }
+.token.keyword { color: #569cd6; }
+.token.function { color: #dcdcaa; }
+.token.number { color: #b5cea8; }
+.token.operator { color: #d4d4d4; }
+.token.tag { color: #569cd6; }
+.token.attr-name { color: #9cdcfe; }
+.token.attr-value { color: #ce9178; }
+
+/* Styling untuk gambar subjudul */
+.subtitle-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.subtitle-image-size {
+    width: 30%;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.subtitle-image:hover {
+    transform: scale(1.02);
+}
+
+/* Styling untuk langkah-langkah */
+.step {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .code-container {
+        padding: 12px 12px 12px 15px;
+    }
+    
+    .code-container code {
+        font-size: 13px;
+    }
+    
+    .copy-btn {
+        padding: 3px 8px;
+        font-size: 11px;
+    }
+}

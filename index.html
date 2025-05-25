@@ -3,40 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Class Website</title>
+    <title>TKJ - Boys Only</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="icon" href="images/icon-el.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="description" content="A modern class website with animations">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Web untuk Boysnya tkj">
 </head>
 <body>
     <!-- Header Section -->
     <header id="home">
         <div class="header-container">
             <div class="logo" aria-label="Website Logo">
-                <h1><span>TKJ</span>Class</h1>
+                <h1><span>TKJ</span>Boys</h1>
             </div>
             <nav>
                 <div class="menu-toggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#class-photos" class="nav-link">Class Photos</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#home" class="nav-link">Beranda</a></li>
+                    <li><a href="#about" class="nav-link">Tentang</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">The Boys  <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#class-photos" class="nav-link">The Boys</a></li>
+                            <li><a href="#pkl" class="nav-link">PKL</a></li>
+                            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                            <li><a href="#testimonials" class="nav-link">Quotes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Tools  <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tools/pjok.html" class="nav-link">Q&A Search</a></li>
+                            <li><a href="#" class="nav-link">Comming soon</a></li>
+                            <li><a href="#" class="nav-link">Comming soon</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#blogs" class="nav-link">Blogs</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="nav-link">Kontak dan Saran</a></li>
                 </ul>
             </nav>
         </div>
         <div class="hero">
             <div class="hero-content">
-                <h2 class="animate-on-scroll fade-in">Welcome to <span>TKJ</span>Class</h2>
-                <p class="animate-on-scroll fade-in-up">It contains TKJClass members, their <span>Photos</span>, <span>Gallery</span>, and their <span>Quote</span>.</p>
-                <a href="#about" class="btn animate-on-scroll fade-in-up">See More</a>
+                <h2 class="animate-on-scroll fade-in">Welcome to <span>TKJ</span>Boys</h2>
+                <p class="animate-on-scroll fade-in-up"><span>TKJBoys</span> bereisikan remaja-ramaja yang berseokalah di SMK Jurusan TKJ. Lebih lengkapnya mengenai kami ⬇️</p>
+                <a href="#about" class="btn animate-on-scroll fade-in-up">Lihat Lebih Lanjut</a>
             </div>
         </div>
     </header>
@@ -44,28 +58,20 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll fade-in">About Us</h2>
+            <h2 class="section-title animate-on-scroll fade-in">Tentang Kami</h2>
             <div class="about-content">
                 <div class="about-image animate-on-scroll slide-in-left">
-                    <img src="images/about.jpg" alt="Class photo" loading="lazy">
+                    <img src="images/bg-2.webp" alt="Class photo" loading="lazy">
                 </div>
                 <div class="about-text animate-on-scroll slide-in-right">
-                    <h3>Who We Are</h3>
-                    <p>We are students of SMKN 1 RENGAT BARAT located in Talang Jerinjing Village and we are the 16th batch of TKJ major. We started school at SMK in early July 2023 and will end at the end of June 2026.</p>
-                    <h3>What Are We</h3>
-                    <p>"I will become an expert in Network and Computer Engineering". But in reality, not all of us understand what a computer is, what a network is, and why I should study in this field. The school is not completely at fault or the government is not completely at fault, maybe about 80% is their fault but in the end it is not them but ourselves who determine what we will become.</p>
+                    <h3>Siapa Kami?</h3>
+                    <p>Kami adalah siswa-siswi SMKN 1 RENGAT BARAT yang berlokasi di Desa Talang Jerinjing dan kami adalah angkatan ke-16 dari jurusan TKJ. Kami mulai bersekolah di SMK pada awal Juli 2023 dan akan berakhir pada akhir Juni 2026.</p>
+                    <h3>Seperti Apa Kami?</h3>
+                    <p>"Saya akan menjadi seorang ahli di bidang Teknik Jaringan dan Komputer". Namun pada kenyataannya, tidak semua dari kita memahami apa itu komputer, apa itu jaringan, dan mengapa saya harus belajar di bidang ini. Sekolah ataupun pemerintah tidak sepenuhnya salah, mungkin sekitar 80% adalah kesalahan mereka tetapi pada akhirnya bukan mereka melainkan diri kita sendiri yang menentukan akan menjadi apa kita nantinya.</p>
                     <div class="stats">
                         <div class="stat-item">
-                            <span class="stat-number">33</span>
-                            <span class="stat-text">Students</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">3</span>
-                            <span class="stat-text">Teachers</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">3</span>
-                            <span class="stat-text">Subjects</span>
+                            <span class="stat-text">Boys</span>
+                            <span class="stat-number">13</span>
                         </div>
                     </div>
                 </div>
@@ -73,66 +79,142 @@
         </div>
     </section>
 
-    <!-- Class Photos Section -->
+    <!-- Boys Photos Section -->
     <section id="class-photos" class="section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll fade-in">Our Photos</h2>
+            <h2 id="photos" class="section-title animate-on-scroll fade-in">The Boys</h2>
             <div class="photos-slider">
                 <div class="photo-slide animate-on-scroll fade-in">
                     <div class="photo-content">
                         <div class="photo-image">
-                            <img src="images/t-faiz.jpg" alt="Class Photo 1" loading="lazy">
+                            <img src="images/boys/t-asep.webp" alt="Class Photo 1">
                         </div>
                         <div class="photo-caption">
-                            <h4>M. Faiz Al-Fajri</h4>
-                            <p>A Chill Boy who was born in 2009</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="photo-slide animate-on-scroll fade-in" data-delay="200">
-                    <div class="photo-content">
-                        <div class="photo-image">
-                            <img src="images/t-ferdi.jpg" alt="Class Photo 2" loading="lazy">
-                        </div>
-                        <div class="photo-caption">
-                            <h4>Ferdiansyah</h4>
-                            <p>Star Boy TKJ</p>
+                            <h4>Asep Saiful</h4>
+                            <p>Pejuang Jarak Jauh  --&gt;  <a href="#contact">Instagram</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="photo-slide animate-on-scroll fade-in" data-delay="400">
                     <div class="photo-content">
                         <div class="photo-image">
-                            <img src="images/t-paril.jpg" alt="Class Photo 3" loading="lazy">
+                            <img src="images/boys/t-akbil.webp" alt="Class Photo 3">
                         </div>
                         <div class="photo-caption">
-                            <h4>Paril</h4>
-                            <p>Gangster Boy</p>
+                            <h4>Akbil Ahmad Royani</h4>
+                            <p>Depelover --&gt; <a href="#contact">Instagram</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="photo-slide animate-on-scroll fade-in" data-delay="600">
                     <div class="photo-content">
                         <div class="photo-image">
-                            <img src="images/t-steven.jpg" alt="Class Photo 4" loading="lazy">
+                            <img src="images/boys/t-ferdi.webp" alt="Class Photo 4">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>Ferdiansyah</h4>
+                            <p>Star Boy  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="600">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-steven.webp" alt="Class Photo 4">
                         </div>
                         <div class="photo-caption">
                             <h4>Julius Steven Simanjuntak</h4>
-                            <p>Star Boy part2</p>
+                            <p>Star Boy part2  --&gt;  <a href="#contact">Instagram</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="photo-slide animate-on-scroll fade-in" data-delay="600">
                     <div class="photo-content">
                         <div class="photo-image">
-                            <img src="images/t-wahfi.jpg" alt="Class Photo 4" loading="lazy">
+                            <img src="images/boys/t-reno.webp" alt="Class Photo 4">
                         </div>
                         <div class="photo-caption">
-                            <h4>Wahfiandra Algani</h4>
-                            <p>The Smartest</p>
+                            <h4>Reno Aprianto</h4>
+                            <p>Kamera Dan Ikan  --&gt;  <a href="#contact">Instagram</a></p>
                         </div>
                     </div>
                 </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="900">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-ade.webp" alt="Class Photo 2">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>Rahmad Adetians</h4>
+                            <p>Om-om Jawa  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="900">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-faiz.webp" alt="Class Photo 2">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>M. Faiz Al Fajri</h4>
+                            <p>Chill boy  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="900">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-iqbal.webp" alt="Class Photo 2">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>Iqbal</h4>
+                            <p>Leader  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="900">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-leanris.webp" alt="Class Photo 2">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>Leanris Paskah Yolanda Sitorus</h4>
+                            <p>Reinkarnasi Eren Yeager  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="900">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-paril.webp" alt="Class Photo 2">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>Paril</h4>
+                            <p>Mas-mas Uwu  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="900">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-rian.webp" alt="Class Photo 2">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>Rian Saputra</h4>
+                            <p>Star Boy pt3  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-slide animate-on-scroll fade-in" data-delay="900">
+                    <div class="photo-content">
+                        <div class="photo-image">
+                            <img src="images/boys/t-wahfi.webp" alt="Class Photo 2">
+                        </div>
+                        <div class="photo-caption">
+                            <h4>Wahfiandra Algani</h4>
+                            <p>Two Steps Ahead  --&gt;  <a href="#contact">Instagram</a></p>
+                        </div>
+                    </div>
                 </div>
             <div class="photos-controls">
                 <button class="photos-prev-btn" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
@@ -142,38 +224,66 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
+    <!-- PKL Section -->
+    <section id="pkl" class="section">
         <div class="container">
-            <h2 id="services" class="section-title animate-on-scroll fade-in">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+            <h2 class="section-title animate-on-scroll fade-in">Praktik Kerja Lapangan</h2>
+            <div class="pkl-container animate-on-scroll fade-in">
+                <div class="pkl-table">
+                    <div class="pkl-header">
+                        <div class="pkl-cell">Nama Siswa</div>
+                        <div class="pkl-cell">Tempat PKL</div>
                     </div>
-                    <h3>Coding Classes</h3>
-                    <p>Learn programming languages and development skills with our expert instructors.</p>
-                </div>
-                <div class="service-card animate-on-scroll fade-in-up" data-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                    <div class="pkl-body">
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Asep Saiful</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/VnH1UcngCHY4VQRE8" target="_blank">Plasa Telkom Rengat</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Julius Steven Simanjuntak</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/VnH1UcngCHY4VQRE8" target="_blank">Plasa Telkom Rengat</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Ferdiansyah</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/VnH1UcngCHY4VQRE8" target="_blank">Plasa Telkom Rengat</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">M. Faiz Al Fajri</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/VnH1UcngCHY4VQRE8" target="_blank">Plasa Telkom Rengat</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Paril</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/VnH1UcngCHY4VQRE8" target="_blank">Plasa Telkom Rengat</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Akbil Ahmad Royani</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/WyVWEtUTtB6o7Qsy9" target="_blank">Ferari Komputer & CCTV</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Wahfiandra Algani</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/WyVWEtUTtB6o7Qsy9" target="_blank">Ferari Komputer & CCTV</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Reno Aprianto</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/kohkWkeMgc9wunSF7" target="_blank">Radja Digital Printing</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Iqbal</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/NqKzxmgacxUB1Rf3A" target="_blank">PT PLN (Persero) UP3 Rengat</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Rian Saputra</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/NqKzxmgacxUB1Rf3A" target="_blank">PT PLN (Persero) UP3 Rengat</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Leanris Paskah Yolanda Sitorus</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/jeQw7pw2aks1x8d27" target="_blank">Intel Komputer</a></div>
+                        </div>
+                        <div class="pkl-row">
+                            <div class="pkl-cell">Rahmad Adetians</div>
+                            <div class="pkl-cell"><a href="https://maps.app.goo.gl/8pLBqvWT3iQtzMxD6" target="_blank">PT Instanet Media Nusantara</a></div>
+                        </div>
                     </div>
-                    <h3>Art & Design</h3>
-                    <p>Express your creativity through various art forms and design principles.</p>
-                </div>
-                <div class="service-card animate-on-scroll fade-in-up" data-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Mathematics</h3>
-                    <p>Master mathematical concepts with our comprehensive curriculum.</p>
-                </div>
-                <div class="service-card animate-on-scroll fade-in-up" data-delay="600">
-                    <div class="service-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3>Science Labs</h3>
-                    <p>Conduct experiments and explore scientific principles in our state-of-the-art labs.</p>
                 </div>
             </div>
         </div>
@@ -185,43 +295,43 @@
             <h2 id="gallery" class="section-title animate-on-scroll fade-in">Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item animate-on-scroll fade-in" data-delay="0">
-                    <img src="images/activity-1.jpg" alt="Tubali After Buker" loading="lazy">
+                    <img src="images/activity-1.webp" alt="Tubali After Buker" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
                     </div>
                 </div>
                 <div class="gallery-item animate-on-scroll fade-in" data-delay="100">
-                    <img src="images/activity-2.jpg" alt="Rendang Hunter" loading="lazy">
+                    <img src="images/activity-2.webp" alt="Rendang Hunter" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
                     </div>
                 </div>
                 <div class="gallery-item animate-on-scroll fade-in" data-delay="200">
-                    <img src="images/activity-3.jpg" alt="Abis Renang" loading="lazy">
+                    <img src="images/activity-3.webp" alt="Abis Renang" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
                     </div>
                 </div>
                 <div class="gallery-item animate-on-scroll fade-in" data-delay="300">
-                    <img src="images/activity-4.jpg" alt="Tubali 6 Anomali" loading="lazy">
+                    <img src="images/activity-4.webp" alt="Tubali 6 Anomali" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
                     </div>
                 </div>
                 <div class="gallery-item animate-on-scroll fade-in" data-delay="400">
-                    <img src="images/activity-5.jpg" alt="Tubali After Swimming" loading="lazy">
+                    <img src="images/activity-5.webp" alt="Tubali After Swimming" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
                     </div>
                 </div>
                 <div class="gallery-item animate-on-scroll fade-in" data-delay="500">
-                    <img src="images/activity-6.jpg" alt="Bukber 2025 " loading="lazy">
+                    <img src="images/bg-1.webp" alt="..... " loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
                     </div>
                 </div>
                 <div class="gallery-item animate-on-scroll fade-in" data-delay="500">
-                    <img src="images/activity-7.jpg" alt="Mendung di rabu itu" loading="lazy">
+                    <img src="images/activity-7.webp" alt="Mendung di rabu itu" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
                     </div>
@@ -239,18 +349,17 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll fade-in">Testimonials</h2>
+            <h2 id="testimonials" class="section-title animate-on-scroll fade-in">Quotes</h2>
             <div class="testimonial-slider">
                 <div class="testimonial-slide animate-on-scroll fade-in">
                     <div class="testimonial-content">
                         <div class="testimonial-text">
-                            <p>"This class has transformed my learning experience. The teachers are supportive and the curriculum is challenging yet engaging."</p>
+                            <p>"Umur hanyalah angka."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="images/t-faiz.jpg" alt="Student 1" loading="lazy">
+                            <img src="images/boys/t-faiz.webp" alt="Student 1" loading="lazy">
                             <div class="author-info">
-                                <h4>Jane Doe</h4>
-                                <p>Student</p>
+                                <h4>Faiz</h4>
                             </div>
                         </div>
                     </div>
@@ -258,13 +367,12 @@
                 <div class="testimonial-slide animate-on-scroll fade-in" data-delay="200">
                     <div class="testimonial-content">
                         <div class="testimonial-text">
-                            <p>"The collaborative environment and hands-on approach to learning has helped me develop both academic and social skills."</p>
+                            <p>"Nasgor Goreng"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="images/t-paril.jpg" alt="Student 2" loading="lazy">
+                            <img src="images/boys/t-steven.webp" alt="Parent" loading="lazy">
                             <div class="author-info">
-                                <h4>John Smith</h4>
-                                <p>Student</p>
+                                <h4>Steven</h4>
                             </div>
                         </div>
                     </div>
@@ -272,13 +380,12 @@
                 <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
                     <div class="testimonial-content">
                         <div class="testimonial-text">
-                            <p>"As a parent, I've seen remarkable growth in my child's abilities and confidence since joining this class."</p>
+                            <p>"Jikalau Nasi sudah menjadi bubur maka, Buatlah bubur terenak yang bisa kita buat."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="images/t-steven.jpg" alt="Parent" loading="lazy">
+                            <img src="images/boys/t-wahfi.webp" alt="Parent" loading="lazy">
                             <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>Parent</p>
+                                <h4>Wahfi</h4>
                             </div>
                         </div>
                     </div>
@@ -286,13 +393,25 @@
                 <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
                     <div class="testimonial-content">
                         <div class="testimonial-text">
-                            <p>"As a parent, I've seen remarkable growth in my child's abilities and confidence since joining this class."</p>
+                            <p>"Nothing is right, but left."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="images/t-wahfi.jpg" alt="Parent" loading="lazy">
+                            <img src="images/boys/t-akbil.webp" alt="Parent" loading="lazy">
                             <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>Parent</p>
+                                <h4>Akbil</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>"Jawa Timur"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/boys/t-asep.webp" alt="Parent" loading="lazy">
+                            <div class="author-info">
+                                <h4>Asep</h4>
                             </div>
                         </div>
                     </div>
@@ -309,27 +428,27 @@
     <!-- Blog Section -->
     <section id="blogs" class="section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll fade-in">Latest Blogs</h2>
+            <h2 class="section-title animate-on-scroll fade-in">Blogs</h2>
             <div class="blog-grid">
                 <div class="blog-card animate-on-scroll fade-in">
                     <div class="blog-image">
-                        <img src="images/activity-1.jpg" alt="Blog Post 1" loading="lazy">
+                        <img src="images/blogs/b1-c.webp" alt="Blog Post 1" loading="lazy">
                         <div class="blog-date">
-                            <span class="day">15</span>
-                            <span class="month">Jun</span>
+                            <span class="day">18</span>
+                            <span class="month">Mei</span>
                         </div>
                     </div>
                     <div class="blog-content">
                         <div class="blog-category">Education</div>
-                        <h3 class="blog-title">The Importance of Collaborative Learning</h3>
-                        <p class="blog-excerpt">Discover how collaborative learning environments foster critical thinking and enhance student engagement...</p>
-                        <a href="blogs/collaborative-learning.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="blog-title">Install Microsoft Office Profesional Plus LTSC 2024 Tanpa Langganan</h3>
+                        <p class="blog-excerpt">Office 2024 dan Office LTSC 2024 hadir dengan beberapa fitur baru, termasuk beberapa fungsi baru di Excel....</p>
+                        <a href="blogs/mso2024.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <div class="blog-card animate-on-scroll fade-in" data-delay="200">
                     <div class="blog-image">
-                        <img src="images/activity-2.jpg" alt="Blog Post 2" loading="lazy">
+                        <img src="images/blogs/b2-c.jpg" alt="Blog Post 2" loading="lazy">
                         <div class="blog-date">
                             <span class="day">10</span>
                             <span class="month">Jun</span>
@@ -337,25 +456,25 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-category">Technology</div>
-                        <h3 class="blog-title">Integrating Technology in the Classroom</h3>
-                        <p class="blog-excerpt">Learn about effective strategies for incorporating technology into your teaching methods...</p>
-                        <a href="blogs/technology-integration.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="blog-title">Apa Itu Jaringan? Pengertian, Istilah, Macam-Macam Jaringan</h3>
+                        <p class="blog-excerpt">Jaringan adalah konsep yang sangat luas dan mencakup berbagai aspek dalam kehidupan sehari-hari, dari teknologi hingga biologi. Namun...</p>
+                        <a href="blogs/jaringan-dasar.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <div class="blog-card animate-on-scroll fade-in" data-delay="400">
                     <div class="blog-image">
-                        <img src="images/activity-3.jpg" alt="Blog Post 3" loading="lazy">
+                        <img src="images/blogs/b3-c.jpg" alt="Blog Post 3" loading="lazy">
                         <div class="blog-date">
                             <span class="day">05</span>
                             <span class="month">Jun</span>
                         </div>
                     </div>
                     <div class="blog-content">
-                        <div class="blog-category">Events</div>
-                        <h3 class="blog-title">Assessment Strategies for Modern Classrooms</h3>
-                        <p class="blog-excerpt">Get all the details about our upcoming assessment, including project guidelines and judging criteria...</p>
-                        <a href="blogs/assessment-strategies.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="blog-category">Education</div>
+                        <h3 class="blog-title">Mengenal Operating System: Pengertian, Fungsi, dan Jenisnya</h3>
+                        <p class="blog-excerpt">Sistem operasi, atau sering disingkat OS (Operating System), adalah perangkat lunak inti yang berfungsi sebagai penghubung antara perangkat keras komputer dan perangkat lunak lainnya....</p>
+                        <a href="blogs/operating-system.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -368,41 +487,44 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 id="contact" class="section-title animate-on-scroll fade-in">Contact Us</h2>
+            <h2 id="contact" class="section-title animate-on-scroll fade-in">Kontak dan Saran</h2>
             <div class="contact-content">
                 <div class="contact-info animate-on-scroll slide-in-left">
+                    <h1>Kontak Kami</h1>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h3>Address</h3>
-                            <p>123 Education Street, Learning City, LC 12345</p>
+                            <h3>Alamat</h3>
+                            <p>Talang Jerinjing, Kec. Rengat Bar, Kabupaten Indragiri Hulu, Riau</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h3>Phone</h3>
-                            <p>(123) 456-7890</p>
+                            <h3>Nomor</h3>
+                            <p>(+62)851-3410-9503</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>info@classwebsite.com</p>
+                            <p>tkj16@boys.com</p>
                         </div>
                     </div>
+                    <h4 style="color: white;">Follow Us</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" id="show-accounts" aria-label="Instagram Accounts"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="404.html" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="contact-form animate-on-scroll slide-in-right">
+                    <h1>Kritik dan Saran</h1>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Nama</label>
                             <input type="text" id="name" name="name" required>
                             <span class="error-message"></span>
                         </div>
@@ -412,16 +534,11 @@
                             <span class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message">Pesan</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                             <span class="error-message"></span>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Kirim Pesan</button>
                     </form>
                 </div>
             </div>
@@ -433,20 +550,20 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>TKJClass</h3>
-                    <p>Learn, Grow, and Succeed Together</p>
+                    <h3>TKJCBoys</h3>
+                    <p><span>TKJBoys</span> bereisikan remaja-ramaja yang<br/> berseokalah di SMK Jurusan TKJ.<br/>Lebih lengkapnya mengenai kami</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#class-photos">Class Photos</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#class-photos">The boys</a></li>
+                        <li><a href="#pkl" class="nav-link">PKL</a></li>
                         <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#testimonials">Quotes</a></li>
                         <li><a href="#blogs">Blogs</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -458,7 +575,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 TKJClass. All Rights Reserved.</p>
+                <p>&copy; 2025 TKJBoys. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -468,7 +585,77 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Popup Notification -->
+    <div id="nav-popup" class="popup-notification">
+    <span class="close-popup">&times;</span>
+    <p>Jika navigasi tidak berfungsi dengan baik, silakan tekan dua kali pada menu yang diinginkan.</p>
+    </div>
+
+    <!-- Modal for Gallery Images -->
+    <div id="gallery-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="modal-caption"></div>
+    </div>
+
+    <!-- Modal for Instagram Accounts -->
+    <div id="accounts-modal" class="account-modal">
+        <div class="account-modal-content">
+            <div class="account-modal-header">
+                <h3>List Akun</h3>
+                <span class="account-modal-close">&times;</span>
+            </div>
+            <div class="account-list">
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/akblhmdr/" target="_blank" class="account-name">@akblahmdr</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/kslahan_berfikir/" target="_blank" class="account-name">@kslahan_berfikir</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/karya_beaft/" target="_blank" class="account-name">@karya_beaft</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/rynn.224/" target="_blank" class="account-name">@rynn.224</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/rhmdadetians_/" target="_blank" class="account-name">@rhmdadetians_</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/ipul4ever/" target="_blank" class="account-name">@ipul4ever</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/jpppppp_n/" target="_blank" class="account-name">@jpppppp_n</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/parilltahlif/" target="_blank" class="account-name">@parilltahlif</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/ferdiansyahhhh___/" target="_blank" class="account-name">@ferdiansyahhhh___</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/iq.bal9376/" target="_blank" class="account-name">@iq.bal9376</a>
+                </div>
+                <div class="account-item">
+                    <div class="account-icon"><i class="fab fa-instagram"></i></div>
+                    <a href="https://www.instagram.com/benchmark_accounts/" target="_blank" class="account-name">@benchmark_accounts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
 </body>

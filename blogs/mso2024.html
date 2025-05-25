@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Microsoft Office Profesional Plus LTSC 2024 - TKJClass</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog-code.css">
+    <link rel="icon" href="../images/icon-el.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-xml-doc.min.js"></script>
+    <meta name="description" content="Panduan lengkap cara install Microsoft Office Professional Plus LTSC 2024 tanpa langganan">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="blog-page-header">
+        <div class="header-container">
+            <div class="logo" aria-label="Website Logo">
+                <h1><span>TKJ</span>Blogs</h1>
+            </div>
+            <nav>
+                <div class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Beranda</a></li>
+                    <li><a href="index.html" class="active">Blogs</a></li>
+                    <li><a href="../index.html#contact">Kontak dan Saran</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div id="mr-t" class="blog-container">
+            <article>
+                <div class="blog-header">
+                    <h1>Install Microsoft Office Profesional Plus LTSC 2024 Tanpa Langganan</h1>
+                    <div class="blog-meta">
+                        <div class="blog-meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>Juni 15, 2023</span>
+                        </div>
+                        <div class="blog-meta-item">
+                            <i class="far fa-user"></i>
+                            <span>By Admin TKJBlogs</span>
+                        </div>
+                        <div class="blog-meta-item">
+                            <i class="far fa-folder"></i>
+                            <span>Tutorial</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <img src="../images/blogs/b1-c.webp" alt="Microsoft Office 2024" class="blog-featured-image">
+                
+                <div class="blog-content-full">
+                    <p>Microsoft Office Professional Plus LTSC 2024 adalah versi terbaru dari suite produktivitas Microsoft yang dirilis untuk pengguna bisnis dan pendidikan. Berbeda dengan Microsoft 365 yang menggunakan model langganan, versi LTSC (Long-Term Servicing Channel) ini dapat dibeli dengan lisensi sekali bayar tanpa perlu berlangganan bulanan atau tahunan.</p>
+                    
+                    <h2>Persyaratan Sistem</h2>
+                    <p>Sebelum menginstal Microsoft Office Professional Plus LTSC 2024, pastikan komputer Anda memenuhi persyaratan sistem berikut:</p>
+                    
+                    <ul>
+                        <li><strong>Sistem Operasi:</strong> Windows 10 (versi 1909 atau lebih baru) atau Windows 11</li>
+                        <li><strong>Prosesor:</strong> 1.6 GHz atau lebih cepat, 2-core</li>
+                        <li><strong>RAM:</strong> 4 GB (64-bit)</li>
+                        <li><strong>Ruang Disk:</strong> 4 GB ruang disk kosong</li>
+                        <li><strong>Resolusi Layar:</strong> 1280 x 768</li>
+                        <li><strong>Grafis:</strong> DirectX 10 dengan WDDM 2.0 atau lebih tinggi</li>
+                    </ul>
+                    
+                    <h2>Langkah 1: Download Office Deployment Tool</h2>
+                    <img src="../images/blogs/b1-sb1.png" alt="Download Office Deployment Tool" class="subtitle-image">
+                    <p>Langkah pertama adalah mengunduh Office Deployment Tool (ODT) dari situs resmi Microsoft:</p>
+                    
+                    <div class="step">
+                        <p>1. Kunjungi situs Microsoft dan unduh <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">Office Deployment Tool</a>:</p>
+                        <p>2. Klik tombol Download dan simpan file officedeploymenttool.exe ke komputer Anda</p>
+                        <p>3. Jalankan file tersebut dan setujui persyaratan lisensi</p>
+                        <p>4. Pilih lokasi ekstraksi (misalnya: C:\ODT) dan klik "Extract"</p>
+                    </div>
+                    
+                    <h2>Langkah 2: Buat File Konfigurasi XML</h2>
+                    <img src="../images/blogs/b1-sb2.png" alt="Buat File Konfigurasi XML" class="subtitle-image">
+                    <p>Selanjutnya, Anda perlu membuat file konfigurasi XML yang akan digunakan oleh ODT untuk mengunduh dan menginstal Office 2024:</p>
+                    
+                    <div class="step">
+                        <p>1. Buka Notepad atau editor teks lainnya</p>
+                        <p>2. Salin dan tempel kode XML berikut:</p>
+                        <div class="code-container">
+                            <code>&lt;Configuration&gt;
+  &lt;Add OfficeClientEdition="64" Channel="PerpetualVL2024"&gt;
+    &lt;Product ID="ProPlus2024Volume" PIDKEY="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"&gt;
+      &lt;Language ID="id-ID" /&gt;
+      &lt;ExcludeApp ID="Access" /&gt;
+      &lt;ExcludeApp ID="Groove" /&gt;
+      &lt;ExcludeApp ID="Lync" /&gt;
+      &lt;ExcludeApp ID="OneDrive" /&gt;
+      &lt;ExcludeApp ID="OneNote" /&gt;
+      &lt;ExcludeApp ID="Teams" /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;
+  &lt;Updates Enabled="TRUE" /&gt;
+  &lt;Display Level="Full" AcceptEULA="TRUE" /&gt;
+  &lt;Property Name="AUTOACTIVATE" Value="1" /&gt;
+&lt;/Configuration&gt;</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                        
+                        <p>3. Simpan file dengan nama "configuration.xml" di folder ODT yang sama (C:\ODT)</p>
+                        <p>4. Catatan: Anda dapat menyesuaikan file konfigurasi ini sesuai kebutuhan:</p>
+                        <ul>
+                            <li>Ubah "OfficeClientEdition" menjadi "32" jika Anda menggunakan sistem 32-bit</li>
+                            <li>Ubah "Language ID" sesuai bahasa yang diinginkan</li>
+                            <li>Hapus baris ExcludeApp jika Anda ingin menginstal aplikasi tersebut</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>Langkah 3: Download dan Install Office 2024</h2>
+                    <img src="../images/blogs/b1-sb3.jpg" alt="Download dan Install Office 2024" class="subtitle-image">
+                    <p>Sekarang Anda siap untuk mengunduh dan menginstal Microsoft Office 2024:</p>
+                    
+                    <div class="step">
+                        <p>1. Buka Command Prompt sebagai Administrator</p>
+                        <p>2. Navigasikan ke folder ODT dengan perintah:</p>
+                        <div class="code-container">
+                            <code>cd C:\ODT</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                        
+                        <p>3. Jalankan perintah berikut untuk mengunduh file instalasi Office:</p>
+                        <div class="code-container">
+                            <code>setup.exe /download configuration.xml</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                        
+                        <p>4. Setelah proses download selesai, jalankan perintah berikut untuk menginstal Office:</p>
+                        <div class="code-container">
+                            <code>setup.exe /configure configuration.xml</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                        
+                        <p>5. Tunggu hingga proses instalasi selesai. Ini mungkin memakan waktu beberapa menit tergantung pada kecepatan komputer Anda.</p>
+                    </div>
+                    
+                    <h2>Langkah 4: Aktivasi Office 2024</h2>
+                    <img src="../images/blogs/b1-sb4.png" alt="Aktivasi Office 2024" class="subtitle-image">
+                    <p>Setelah instalasi selesai, Anda perlu mengaktivasi Office 2024:</p>
+                    
+                    <div class="step">
+                        <p>1. Buka Command Prompt sebagai Administrator</p>
+                        <p>2. Navigasikan ke folder instalasi Office dengan perintah:</p>
+                        <div class="code-container">
+                            <code>cd C:\Program Files\Microsoft Office\Office16</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                        
+                        <p>3. Jalankan perintah berikut untuk mengaktivasi Office menggunakan KMS:</p>
+                        <div class="code-container">
+                            <code>cscript ospp.vbs /inpkey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                        
+                        <p>4. Ganti XXXXX-XXXXX-XXXXX-XXXXX-XXXXX dengan kunci produk yang valid</p>
+                        <p>5. Jalankan perintah berikut untuk menetapkan server KMS:</p>
+                        <div class="code-container">
+                            <code>cscript ospp.vbs /sethst:kms.example.com</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                        
+                        <p>6. Ganti kms.example.com dengan alamat server KMS yang valid</p>
+                        <p>7. Aktifkan Office dengan perintah:</p>
+                        <div class="code-container">
+                            <code>cscript ospp.vbs /act</code>
+                            <button class="copy-btn">Salin</button>
+                            <span class="copy-success">Tersalin!</span>
+                        </div>
+                    </div>
+                    
+                    <h2>Kesimpulan</h2>
+                    <p>Selamat! Anda telah berhasil menginstal dan mengaktivasi Microsoft Office Professional Plus LTSC 2024 tanpa langganan. Versi ini akan terus berfungsi tanpa perlu pembaruan langganan, meskipun tidak akan mendapatkan fitur baru seperti pada Microsoft 365.</p>
+                    
+                    <p>Beberapa keuntungan menggunakan versi LTSC:</p>
+                    <ul>
+                        <li>Pembayaran sekali tanpa biaya berlangganan</li>
+                        <li>Tidak ada pembaruan fitur yang dapat mengganggu alur kerja</li>
+                        <li>Dapat digunakan tanpa koneksi internet</li>
+                        <li>Lebih stabil karena jarang diperbarui</li>
+                    </ul>
+                    
+                    <p>Perlu diingat bahwa tutorial ini hanya untuk tujuan pendidikan. Pastikan Anda memiliki lisensi yang sah untuk menggunakan Microsoft Office Professional Plus LTSC 2024 di lingkungan produksi.</p>
+                </div>
+                
+                <div class="blog-tags">
+                    <span class="blog-tag">Microsoft Office</span>
+                    <span class="blog-tag">Tutorial</span>
+                    <span class="blog-tag">Software</span>
+                    <span class="blog-tag">Produktivitas</span>
+                </div>
+
+                <div class="blog-navigation">
+                    <a href="index.html" class="blog-nav-back">Back to All Blogs</a>
+                    <a href="jaringan-dasar.html" class="blog-nav-next">Next Post <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>TKJCBlogs</h3>
+                    <p>Learn, Grow, and Succeed Together</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Beranda</a></li>
+                        <li><a href="index.html">Blogs</a></li>
+                        <li><a href="../index.html#contact">Kontak dan Saran</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TKJBlogs. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Files -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/blog-code.js"></script>
+</body>
+</html>

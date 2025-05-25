@@ -1,16 +1,133 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Navigation menu toggle for mobile
+    // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    
+    const navPopup = document.getElementById('nav-popup');
+    const closePopup = document.querySelector('.close-popup');
+    let popupShown = false;
 
-    if (menuToggle) {
+    if (!popupShown && navPopup) {
+        setTimeout(() => {
+            navPopup.classList.add('show');
+        }, 3000); // Show after 2 seconds
+        
+        // Auto-hide popup after 10 seconds
+        setTimeout(() => {
+            if (navPopup.classList.contains('show')) {
+                navPopup.classList.remove('show');
+                localStorage.setItem('navPopupShown', 'true');
+            }
+        }, 5000);
+    }
+
+    // Initialize menu toggle
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+            // Toggle icon between bars and times (x)
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
     }
 
+    // Dropdown menu functionality for mobile
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent event bubbling to parent elements
+            
+            // Check if we're on mobile view
+            if (window.innerWidth <= 768) {
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.classList.toggle('show');
+                
+                // Toggle the caret icon
+                const caret = this.querySelector('.fa-caret-down, .fa-caret-up');
+                if (caret) {
+                    caret.classList.toggle('fa-caret-down');
+                    caret.classList.toggle('fa-caret-up');
+                }
+                
+                // Close other open dropdowns
+                dropdownToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        const otherMenu = otherToggle.nextElementSibling;
+                        if (otherMenu && otherMenu.classList.contains('show')) {
+                            otherMenu.classList.remove('show');
+                            const otherCaret = otherToggle.querySelector('.fa-caret-up');
+                            if (otherCaret) {
+                                otherCaret.classList.add('fa-caret-down');
+                                otherCaret.classList.remove('fa-caret-up');
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+    
+    // Reset dropdown state when window is resized
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+            document.querySelectorAll('.dropdown-toggle .fa-caret-up').forEach(caret => {
+                caret.classList.add('fa-caret-down');
+                caret.classList.remove('fa-caret-up');
+            });
+        }
+    });
+
+    // Close popup when clicking the close button
+    if (closePopup) {
+        closePopup.addEventListener('click', function() {
+            navPopup.classList.remove('show');
+            localStorage.setItem('navPopupShown', 'true');
+        });
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (menuToggle && navLinks && navLinks.classList.contains('active') && 
+            !navLinks.contains(event.target) && 
+            !menuToggle.contains(event.target)) {
+            navLinks.classList.remove('active');
+            // Reset icon to bars
+            const icon = menuToggle.querySelector('i');
+            if (icon && icon.classList.contains('fa-times')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
+    
+    // Close menu when clicking on a nav link (but not dropdown toggles)
+    const navItems = document.querySelectorAll('.nav-links a:not(.dropdown-toggle)');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                // Reset icon to bars
+                const icon = menuToggle.querySelector('i');
+                if (icon && icon.classList.contains('fa-times')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+    });
+    
     // Smooth scrolling for navigation links
     const navAnchors = document.querySelectorAll('a[href^="#"]');
     navAnchors.forEach(anchor => {
@@ -20,9 +137,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
+                    if (navLinks && navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
-                        menuToggle.classList.remove('active');
+                        if (menuToggle) {
+                            menuToggle.classList.remove('active');
+                        }
                     }
                     
                     window.scrollTo({
@@ -38,9 +157,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.header-container');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            header.classList.add('scrolled');
+            if (header) header.classList.add('scrolled');
         } else {
-            header.classList.remove('scrolled');
+            if (header) header.classList.remove('scrolled');
         }
     });
 
@@ -162,6 +281,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Instagram Accounts Modal
+    const showAccountsBtn = document.getElementById('show-accounts');
+    const accountsModal = document.getElementById('accounts-modal');
+    const accountsModalClose = document.querySelector('.account-modal-close');
+
+    if (showAccountsBtn && accountsModal) {
+        showAccountsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            accountsModal.style.display = 'block';
+        });
+    }
+
+    // Close accounts modal when clicking on X
+    if (accountsModalClose) {
+        accountsModalClose.addEventListener('click', function() {
+            accountsModal.style.display = 'none';
+        });
+    }
+
+    // Close accounts modal when clicking outside the content
+    if (accountsModal) {
+        accountsModal.addEventListener('click', function(event) {
+            if (event.target === accountsModal) {
+                accountsModal.style.display = 'none';
+            }
+        });
+    }
+
     // Testimonial slider
     const testimonialSlides = document.querySelectorAll('.testimonial-slide');
     const prevBtn = document.querySelector('.prev-btn');
@@ -226,6 +373,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        // Initialize EmailJS with your public key
+        (function() {
+            // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+            emailjs.init('aoWiGaWit6olHe52J');
+        })();
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             let isValid = true;
@@ -251,9 +404,35 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (isValid) {
-                // In a real application, you would send the form data to a server here
-                alert('Form submitted successfully!');
-                contactForm.reset();
+                // Show loading state
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                
+                // Prepare template parameters
+                const templateParams = {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    message: document.getElementById('message').value,
+                    time: new Date().toLocaleString()
+                };
+                
+                // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
+                emailjs.send('service_4v9m2fi', 'template_qkc55dv', templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        alert('Pesan berhasil dikirim!');
+                        contactForm.reset();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert('Gagal mengirim pesan. Silakan coba lagi.');
+                    })
+                    .finally(function() {
+                        // Reset button state
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                    });
             }
         });
     }
