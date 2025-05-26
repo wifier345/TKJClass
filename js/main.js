@@ -806,3 +806,126 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Album gallery functionality
+const albumCards = document.querySelectorAll('.album-card');
+const albumModal = document.getElementById('album-modal');
+const albumModalTitle = document.getElementById('album-modal-title');
+const albumImages = document.getElementById('album-images');
+const albumModalClose = document.querySelector('.album-modal-close');
+
+// Album data - you can expand this with more images for each album
+const albumData = {
+    album1: {
+        title: "Bukber",
+        date: "19 Maret, 2025",
+        images: [
+            { src: "images/album/a1/1.webp", caption: "Buker - Image 1" },
+            { src: "images/album/a1/2.webp", caption: "Buker - Image 2" },
+            { src: "images/album/a1/3.webp", caption: "Buker - Image 3" },
+            { src: "images/album/a1/4.webp", caption: "Buker - Image 4" },
+            { src: "images/album/a1/5.webp", caption: "Buker - Image 5" },
+            { src: "images/album/a1/6.webp", caption: "Buker - Image 6" },
+            { src: "images/album/a1/7.webp", caption: "Buker - Image 7" },
+            { src: "images/album/a1/8.webp", caption: "Buker - Image 8" },
+            { src: "images/album/a1/9.webp", caption: "Buker - Image 9" }
+        ]
+    },
+    album2: {
+        title: "Hytam",
+        date: "26 Mei, 2025",
+        images: [
+            { src: "images/album/a2/1.webp", caption: "Hytam - Image 1" },
+            { src: "images/album/a2/2.webp", caption: "Hytam - Image 2" },
+            { src: "images/album/a2/3.webp", caption: "Hytam - Image 3" },
+            { src: "images/album/a2/4.webp", caption: "Hytam - Image 4" },
+        ]
+    },
+    album3: {
+        title: "Abis Renang",
+        date: "10 Mei, 2025",
+        images: [
+            { src: "images/album/a3/1.webp", caption: "Abis Renang - Image 1" },
+            { src: "images/album/a3/2.jpg", caption: "Abis Renang - Image 2" },
+            { src: "images/album/a3/3.jpg", caption: "Abis Renang - Image 3" },
+            { src: "images/album/a3/4.jpg", caption: "Abis Renang - Image 4" },
+            { src: "images/album/a3/5.jpg", caption: "Abis Renang - Image 5" },
+            { src: "images/album/a3/6.jpg", caption: "Abis Renang - Image 6" },
+            { src: "images/album/a3/7.jpg", caption: "Abis Renang - Image 7" },
+        ]
+    },
+    album4: {
+        title: "Siak",
+        date: "9 September, 2025",
+        images: [
+            { src: "images/album/a4/1.webp", caption: "Siak - Image 1" },
+            { src: "images/album/a4/2.webp", caption: "Siak - Image 2" },
+            { src: "images/album/a4/3.webp", caption: "Siak - Image 3" },
+            { src: "images/album/a4/4.webp", caption: "Siak - Image 4" },
+            { src: "images/album/a4/5.webp", caption: "Siak - Image 5" },
+            { src: "images/album/a4/6.webp", caption: "Siak - Image 6" },
+            { src: "images/album/a4/7.webp", caption: "Siak - Image 7" },
+            { src: "images/album/a4/8.webp", caption: "Siak - Image 8" },
+            { src: "images/album/a4/9.webp", caption: "Siak - Image 9" },
+            { src: "images/album/a4/10.webp", caption: "Siak - Image 10" },
+        ]
+    }
+};
+
+// Open album modal when clicking on an album card
+albumCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const albumId = this.getAttribute('data-album-id');
+        const album = albumData[albumId];
+        
+        if (album) {
+            // Set modal title
+            albumModalTitle.textContent = album.title;
+            
+            // Clear previous images
+            albumImages.innerHTML = '';
+            
+            // Add images to modal
+            album.images.forEach(image => {
+                const imageItem = document.createElement('div');
+                imageItem.className = 'album-image-item';
+                
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.caption;
+                
+                const caption = document.createElement('div');
+                caption.className = 'album-image-caption';
+                caption.textContent = image.caption;
+                
+                imageItem.appendChild(img);
+                imageItem.appendChild(caption);
+                albumImages.appendChild(imageItem);
+            });
+            
+            // Show modal
+            albumModal.style.display = 'block';
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close album modal when clicking on X
+if (albumModalClose) {
+    albumModalClose.addEventListener('click', function() {
+        albumModal.style.display = 'none';
+        // Re-enable body scrolling
+        document.body.style.overflow = '';
+    });
+}
+
+// Close album modal when clicking outside the content
+window.addEventListener('click', function(e) {
+    if (e.target === albumModal) {
+        albumModal.style.display = 'none';
+        // Re-enable body scrolling
+        document.body.style.overflow = '';
+    }
+});

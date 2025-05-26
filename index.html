@@ -294,135 +294,183 @@
         <div class="container">
             <h2 id="gallery" class="section-title animate-on-scroll fade-in">Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item animate-on-scroll fade-in" data-delay="0">
-                    <img src="images/activity-1.webp" alt="Tubali After Buker" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                <!-- Album 1 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="0" data-album-id="album1">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a1/4.webp" alt="Tubali After Buker" loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Buker</h3>
+                        <p class="album-date">19 Maret, 2025</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll fade-in" data-delay="100">
-                    <img src="images/activity-2.webp" alt="Rendang Hunter" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                
+                <!-- Album 2 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="100" data-album-id="album2">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a2/3.webp" alt="Rendang Hunter" loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Hytam</h3>
+                        <p class="album-date">26 Mei, 2025</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll fade-in" data-delay="200">
-                    <img src="images/activity-3.webp" alt="Abis Renang" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                
+                <!-- Album 3 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="200" data-album-id="album3">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a3/2.jpg" alt="Abis Renang" loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Abis Renang</h3>
+                        <p class="album-date">10 Mei, 2025</p>
                     </div>
                 </div>
-                <div class="gallery-item animate-on-scroll fade-in" data-delay="300">
-                    <img src="images/activity-4.webp" alt="Tubali 6 Anomali" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                
+                <!-- Album 4 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="300" data-album-id="album4">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a4/5.webp" alt="Tubali 6 Anomali" loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item animate-on-scroll fade-in" data-delay="400">
-                    <img src="images/activity-5.webp" alt="Tubali After Swimming" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
-                    </div>
-                </div>
-                <div class="gallery-item animate-on-scroll fade-in" data-delay="500">
-                    <img src="images/bg-1.webp" alt="..... " loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
-                    </div>
-                </div>
-                <div class="gallery-item animate-on-scroll fade-in" data-delay="500">
-                    <img src="images/activity-7.webp" alt="Mendung di rabu itu" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                    <div class="album-info">
+                        <h3 class="album-title">Siak</h3>
+                        <p class="album-date">8 September, 2024</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Modal for Gallery Images -->
-        <div id="gallery-modal" class="modal">
-            <span class="modal-close">&times;</span>
-            <img class="modal-content" id="modal-img">
-            <div id="modal-caption"></div>
+        
+        <!-- Modal for Album Images -->
+        <div id="album-modal" class="album-modal">
+            <div class="album-modal-content">
+                <div class="album-modal-header">
+                    <h3 id="album-modal-title">Album Title</h3>
+                    <span class="album-modal-close">&times;</span>
+                </div>
+                <div class="album-images-container">
+                    <div id="album-images" class="album-images">
+                        <!-- Images will be loaded here dynamically -->
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="section">
-        <div class="container">
-            <h2 id="testimonials" class="section-title animate-on-scroll fade-in">Quotes</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide animate-on-scroll fade-in">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Umur hanyalah angka."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/boys/t-faiz.webp" alt="Student 1" loading="lazy">
-                            <div class="author-info">
-                                <h4>Faiz</h4>
-                            </div>
-                        </div>
+    <div class="container">
+        <h2 id="testimonials" class="section-title animate-on-scroll fade-in">Quotes</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide animate-on-scroll fade-in">
+                <div class="testimonial-content">
+                    <div class="testimonial-text">
+                        <p>"Tertawalah untuk kehidupan yang begitu FANA."</p>
                     </div>
-                </div>
-                <div class="testimonial-slide animate-on-scroll fade-in" data-delay="200">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Nasgor Goreng"</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/boys/t-steven.webp" alt="Parent" loading="lazy">
-                            <div class="author-info">
-                                <h4>Steven</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Jikalau Nasi sudah menjadi bubur maka, Buatlah bubur terenak yang bisa kita buat."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/boys/t-wahfi.webp" alt="Parent" loading="lazy">
-                            <div class="author-info">
-                                <h4>Wahfi</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Nothing is right, but left."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/boys/t-akbil.webp" alt="Parent" loading="lazy">
-                            <div class="author-info">
-                                <h4>Akbil</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Jawa Timur"</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/boys/t-asep.webp" alt="Parent" loading="lazy">
-                            <div class="author-info">
-                                <h4>Asep</h4>
-                            </div>
+                    <div class="testimonial-author">
+                        <img src="images/boys/t-faiz.webp" alt="Student 1" loading="lazy">
+                        <div class="author-info">
+                            <h4>Faiz</h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-controls">
-                <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                <div class="testimonial-dots"></div>
-                <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            <div class="testimonial-slide animate-on-scroll fade-in" data-delay="200">
+                <div class="testimonial-content">
+                    <div class="testimonial-text">
+                        <p>"Nasgor Goreng"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/boys/t-steven.webp" alt="Parent" loading="lazy">
+                        <div class="author-info">
+                            <h4>Steven</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
+                <div class="testimonial-content">
+                    <div class="testimonial-text">
+                        <p>"Jikalau Nasi sudah menjadi bubur maka, Buatlah bubur terenak yang bisa kita buat."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/boys/t-wahfi.webp" alt="Parent" loading="lazy">
+                        <div class="author-info">
+                            <h4>Wahfi</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide animate-on-scroll fade-in" data-delay="500">
+                <div class="testimonial-content">
+                    <div class="testimonial-text">
+                        <p>"Nothing is right, but left."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/boys/t-akbil.webp" alt="Parent" loading="lazy">
+                        <div class="author-info">
+                            <h4>Akbil</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide animate-on-scroll fade-in" data-delay="400">
+                <div class="testimonial-content">
+                    <div class="testimonial-text">
+                        <p>"Kalo belum ULTI jangan bilang udah All In."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/boys/t-asep.webp" alt="Parent" loading="lazy">
+                        <div class="author-info">
+                            <h4>Asep</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide animate-on-scroll fade-in" data-delay="600">
+                <div class="testimonial-content">
+                    <div class="testimonial-text">
+                        <p>"Carilah tempat dimana dirimu bisa di hargai org lain, dan pergilah dari tempat yang tidak bisa menghargai dirimu."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/boys/t-reno.webp" alt="Parent" loading="lazy">
+                        <div class="author-info">
+                            <h4>Reno</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide animate-on-scroll fade-in" data-delay="600">
+                <div class="testimonial-content">
+                    <div class="testimonial-text">
+                        <p>"Kalo bisa besok kenapa harus sekarang?"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/boys/t-ade.webp" alt="Parent" loading="lazy">
+                        <div class="author-info">
+                            <h4>Ade</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="testimonial-controls">
+            <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+            <div class="testimonial-dots"></div>
+            <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
     </section>
 
     <!-- Blog Section -->
@@ -550,7 +598,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h3>TKJCBoys</h3>
+                    <h3>TKJBoys</h3>
                     <p><span>TKJBoys</span> berisikan remaja-remaja yang<br/> bersekolah di SMK Jurusan TKJ.<br/>Lebih lengkapnya mengenai kami</p>
                 </div>
                 <div class="footer-links">

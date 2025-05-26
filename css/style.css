@@ -26,7 +26,6 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--light-color);
     overflow-x: hidden;
 }
 
@@ -64,16 +63,32 @@ img {
     padding: 80px 0;
 }
 
-.section#class-photos, .section#testimonials {
-    background: var(--primary-color);
+.section#class-photos {
+    background: linear-gradient(135deg, #61b0e3 0%, #1a5d8a 100%) !important;
 }
 
 .section#gallery {
-    background: #b5b4b4;
+    background: linear-gradient(135deg, #b5b4b4 0%, #666666 100%) !important;
 }
 
 .section#contact {
-    background: var(--dark-color);
+    background: linear-gradient(135deg, #333333 0%, #000000 100%) !important;
+}
+
+.section#testimonials {
+    background: linear-gradient(135deg, #61b0e3 0%, #1a5d8a 100%) !important;
+}
+
+.section#about {
+    background: linear-gradient(135deg, #f4f4f4 0%, #c0c0c0 100%) !important;
+}
+
+.section#blogs {
+    background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%) !important;
+}
+
+.section#pkl {
+    background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%) !important;
 }
 
 .section-title {
@@ -327,7 +342,7 @@ header#home {
 
 .about-text p {
     margin-bottom: 20px;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .stats {
@@ -364,7 +379,8 @@ header#home {
 /* Class Photos Section */
 .photos-slider {
     position: relative;
-    max-width: 600px;
+    max-width: 400px;
+    max-height: 600px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -378,7 +394,6 @@ header#home {
 }
 
 .photo-content {
-    background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     margin: 20px;
@@ -398,7 +413,7 @@ header#home {
 
 .photo-caption {
     padding: 20px;
-    background: white;
+    background: linear-gradient(135deg, #f4f4f4 0%, #c0c0c0 100%) !important;
 }
 
 .photo-caption h4 {
@@ -524,29 +539,46 @@ header#home {
     font-size: 14px;
 }
 
-/* Gallery Section */
+
+/* Album Cards */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
-.gallery-item {
-    position: relative;
+.album-card {
+    background-color: white;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-.gallery-item img {
-    transition: var(--transition);
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.album-thumbnail {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.album-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.gallery-overlay {
+.album-card:hover .album-thumbnail img {
+    transform: scale(1.1);
+}
+
+.album-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -557,26 +589,161 @@ header#home {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: var(--transition);
+    transition: opacity 0.3s ease;
 }
 
-.gallery-zoom {
-    color: white;
-    font-size: 2rem;
-    transform: scale(0);
-    transition: var(--transition);
-}
-
-.gallery-item:hover .gallery-overlay {
+.album-card:hover .album-overlay {
     opacity: 1;
 }
 
-.gallery-item:hover .gallery-zoom {
-    transform: scale(1);
+.album-view {
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.1);
+.album-card:hover .album-view {
+    transform: translateY(0);
+}
+
+.album-info {
+    padding: 15px;
+}
+
+.album-title {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.album-date {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Album Modal */
+.album-modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 0.3s ease;
+}
+
+.album-modal-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 80vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.album-modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+.album-modal-close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.album-modal-close:hover {
+    color: var(--accent-color);
+}
+
+.album-images-container {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.album-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding-right: 5px;
+}
+
+.album-image-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.album-image-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.album-image-item:hover img {
+    transform: scale(1.05);
+}
+
+.album-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.album-image-item:hover .album-image-caption {
+    transform: translateY(0);
+}
+
+/* Scrollbar styling for album images */
+.album-images-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.album-images-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.album-images-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.album-images-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 /* Modal */
@@ -747,7 +914,7 @@ header#home {
 }
 
 .testimonial-content {
-    background: white;
+    background: linear-gradient(135deg, #f4f4f4 0%, #c0c0c0 100%) !important;
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -1649,6 +1816,14 @@ footer {
         font-size: 1.2rem;
     }
 
+    .photos-slider {
+        max-width: 350px;
+    }
+
+    .photo-image img {
+        height: 250px;
+    }
+
     .featured-blog {
         grid-template-columns: 1fr;
         height: 800px;
@@ -1746,10 +1921,6 @@ footer {
         font-size: 2rem;
     }
 
-    .photo-image img {
-        height: 300px;
-    }
-
     .photos-prev-btn, .photos-next-btn {
         width: 30px;
         height: 30px;
@@ -1763,6 +1934,15 @@ footer {
 
     .pkl-header, .pkl-row {
         flex-direction: column;
+    }
+
+    .album-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .album-images {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
     
     .pkl-cell {
@@ -1814,8 +1994,13 @@ footer {
         padding: 10px 20px;
     }
 
+    .photos-slider {
+        max-width: 350px;
+        max-height: 600px;
+    }
+
     .photo-image img {
-        height: 250px;
+        height: 350px;
     }
     
     .photo-caption {
@@ -1869,6 +2054,10 @@ footer {
         font-size: 1.2rem;
         bottom: 20px;
         right: 20px;
+    }
+    
+    .album-images {
+        grid-template-columns: 1fr;
     }
 }
 
