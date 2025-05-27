@@ -431,6 +431,20 @@
         }
         
         /* Responsive design */
+        /* Styling untuk gambar pertanyaan */
+        .question-image {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+        }
+        
+        .question-image:hover {
+            transform: scale(1.02);
+        }
+        
         @media (max-width: 600px) {
             body {
                 padding: 15px;
@@ -446,6 +460,10 @@
             
             .question {
                 font-size: 16px;
+            }
+            
+            .question-image {
+                margin: 10px 0;
             }
         }
     </style>
@@ -476,7 +494,7 @@
         </div>
     </nav>
 
-    <h1>PJOK Q&A Search</h1>
+    <h1>BING Q&A Search</h1>
     
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Cari pertanyaan...">
@@ -554,554 +572,290 @@
         // Array of 50 multiple choice Q&A pairs
         const qaData = [
             {
-                question: "Dua orang pemain bola basket atau lebih memegang bola secara bersama-sama dalam waktu agak lama adalah ……",
+                question: "The second paragraph in narrative text is ....",
                 options: [
-                    "Held ball",
-                    "Three second rule",
-                    "Personal foul",
-                    "Blocking",
-                    "Charging"
+                    "Orientation",
+                    "Re - Orientation",
+                    "Complication",
+                    "Resolution",
+                    "Conslusion"
                 ],
-                correctAnswer: 0 // Index of the correct answer (a)
+                correctAnswer: 2
             },
             {
-                question: "Pola dasar penyergapan terhadap daerah dalam bola basket adalah ……",
+                question: "The Bear and the Two Friends Once, two friends were walking through the forest. They knew that anything dangerous can happen to them at any time in the forest. So they promised each other that they would remain united in case of danger.Suddenly, they saw a large bear approaching tern. One of the friends at once climbed a nearby tree. But the other one did not know how to climb. So being led by his common sense, he lay down on the ground breathless, pretending to be a dead man.The bear came near the man lying on the ground. It smelt his ears and slowly left the place. Because the bear did not touch him, the friend on the tree came down and asked his friend on the ground, 'Friend, what did the bear tell you into your ears?' The other friend replied, 'He advised me not to believe a false friend. Where do you think the story happened?",
                 options: [
-                    "Pola 1-3-1 dan pola 2-1-2",
-                    "Pola 2-3 dan pos rangkap pola 3-2",
-                    "Pola 2-2-1 dan pola 2-3",
-                    "Pola 4-4-2",
-                    "Pola 2-3-5"
+                    "In the river",
+                    "In the park",
+                    "In the Jungle",
+                    "In the zoo",
+                    "In the market"
                 ],
-                correctAnswer: 0 // Index of the correct answer (b)
+                correctAnswer: 2
             },
             {
-                question: "Peraturan perlombaan lari gawang pada dasarnya sama dengan peraturan pada lari jarak pendek perbedaannya hanya terletak pada ……",
+                question: "What is the purpose of narrative text?",
                 options: [
-                    "Teknik start",
-                    "Teknik lari",
-                    "Kecepatannya",
-                    "Masuk finishnya",
-                    "Gawang yang harus dilewati"
+                    "To describe particular thing",
+                    "To entertain the reader",
+                    "To tell the past event",
+                    "To notice someone",
+                    "To tell about person"
                 ],
-                correctAnswer: 4 // Index of the correct answer (c)
+                correctAnswer: 1
             },
             {
-                question: "Sistem permainan bulu tangkis permainan ganda menempatkan posisi pemain yang satu orang berada di depan dan yang lain di belakang disebut ……",
+                question: "Which of the following is not simple present tense?",
                 options: [
-                    "Front of side",
-                    "Front and back",
-                    "Circulatic",
-                    "Side and back",
-                    "side by side"
+                    "Dinda Haw goes to school by public transportation every morning",
+                    "The waters falls from higher places to the lower ones",
+                    "My mother helped me finishing my school work",
+                    "Dendy never has breakfast before leaving home",
+                    "Out of the blue, Rini asks me to leave her alone"
                 ],
-                correctAnswer: 1 // Index of the correct answer (d)
+                correctAnswer: 2
             },
             {
-                question: "Umpan pemain ke arah penjaga gawang sebagai upaya untuk mengamankan wilayah pertahanan dalam sepak bola disebut ……",
+                question: "Bad TemperThere once was a little boy who had a bad temper. His father gave him a bag of nails and told him that every time he lost his temper, he must hammer a nail into the back of the fence.The first day, the boy had driven 37 nails into the fence. Over the next few weeks, as he learned to control his anger, the number of nails hammered daily gradually dwindled down. He discovered it was easier to hold his temper than to drive those nails into the fence.Finally the day came when the boy didn't lose his temper at all. He told his father about it and the father suggested that the boy now pull out one nail for each day that he was able to hold his temper. The days passed and the boy was finally able to tell his father that all the nails were gone.The father took his son by the hand and led him to the fence. He said, 'You have done well, my son, but look at the holes in the fence. The fence will never be the same. When you say things in anger, they leave a scar just like this one. You can put a knife in a man and draw it out. It won't matter how many times you say I'm sorry. The wound is still there.' What message we can learn from the story?",
                 options: [
-                    "Back pass",
-                    "Clearing",
-                    "Bicycle kick",
-                    "Intercept",
-                    "Total football"
+                    "We must respect our parents",
+                    "People should apologize one another",
+                    "The boy eventually can control his temper",
+                    "Say things in anger will hurt someone and can break relationships",
+                    "The boy had a bad temper"
                 ],
-                correctAnswer: 0 // Index of the correct answer (e)
+                correctAnswer: 3
             },
             {
-                question: "Salah satu kesalahan yang sering terjadi dalam loncat kangkang adalah ……",
+                question: "Read the list below (1) Using simple present (2) Using adjective (3) Using linking verbs (4) Using declarative sentence (5) Using simple past tense Which of the above features cannot be used in a descriptive text?",
                 options: [
-                    "Mengangkat kaki tinggi",
-                    "Tumpuan tangan yang kuat",
-                    "Melakukan tolakan dengan kedua kaki",
-                    "Tumpuan tangan yang lemah",
-                    "Melakukan tolakan dengan kedua kaki"
+                    "(1) and (2)",
+                    "(1), (3), and (5)",
+                    "(4)",
+                    "(2) and (4)",
+                    "(5)"
                 ],
-                correctAnswer: 3 // Index of the correct answer (a)
+                correctAnswer: 4
             },
             {
-                question: "Dalam melakukan teknik loncat kangkang di atas peti lompat pada saat kaki telah melewati peti lompat kedua tangan harus ……",
+                question: "Borobudur and Prambanan Temples are Indonesian…..",
                 options: [
-                    "Segera dijulurkan",
-                    "Segera ditekuk bersama-sama",
-                    "Segera diluruskan pada tumpuan",
-                    "Segera diluruskan pada tumpuan",
-                    "Segera dilepaskan pada tumpuan"
+                    "Scenery",
+                    "Exhibition",
+                    "Heritage",
+                    "Adventure",
+                    "Ecotourism"
                 ],
-                correctAnswer: 3 // Index of the correct answer (b)
+                correctAnswer: 2
             },
             {
-                question: "Alat pendukung yang biasa digunakan dalam gerakan senam irama, kecuali …..",
+                question: "What is the definition of descriptive text?",
                 options: [
-                    "Gada",
-                    "Simpai",
-                    "Tali",
-                    "Pita",
-                    "Samurai"
+                    "A text that shows how to do or make something in a chronological order",
+                    "A text that describes something, such as person, animal, thing or place in a detailed way",
+                    "A text that tell the stories from the past so that we can know what happened in the past",
+                    ".A text that is used to persuade readers to have similar inters or point of view with the writer",
+                    "None of the above"
                 ],
-                correctAnswer: 4 // Index of the correct answer (c)
+                correctAnswer: 0
             },
             {
-                question: "Gerakan senam aerobik yang dimaksudkan untuk keseimbangan tekanan darah, kestabilan kerja jantung dan mengurangi ketegangan pikiran adalah gerakan …..",
+                question: "He possesses a large pocket that can produce many gadgets from the future. The pocket is called yojigen-pocket, or fourth- dimensional pocket. Who is he?",
                 options: [
-                    " Mengatur napas",
-                    "Bangkit mengatur napas",
-                    "Melapangkan dada",
-                    "Mengayun tangan",
-                    "Melapangkan dada dan mengayun tangan"
+                    "Shinchan",
+                    "Luffy",
+                    "Doraemon",
+                    "Naruto",
+                    "Boboboy"
                 ],
-                correctAnswer: 1 // Index of the correct answer (d)
+                correctAnswer: 2
             },
             {
-                question: "Loncat kangkang di atas peti termasuk senam …..",
+                question: "She is an American singer and song writer. She is known for narrative songs about her personal life. Her songs are very popular, namely Shake It Off, Blank Space and Bad Blood. She has appeared as one of the most influential and powerful women in the world by Forbes and Time magazines. Who is she?",
                 options: [
-                    "Massal",
-                    "Ketangkasan",
-                    "Artistik",
-                    "Kebugaran",
-                    "Pembentukan"
+                    "Brittney Spears",
+                    "Taylor Swift",
+                    "Rihanna",
+                    "Mariah Carey",
+                    "Justin Bieber"
                 ],
-                correctAnswer: 2 // Index of the correct answer (e)
+                correctAnswer: 1
             },
             {
-                question: "Dance (tari modern) dalam senam irama, berasal dari kelompok seni …..",
+                question: "Procedure text is ....",
                 options: [
-                    "Sandiwara",
-                    "Tari",
-                    "Pantomim",
-                    "Sinetron",
-                    "Musik"
+                    "a piece of writing which consists of an imaginative story.",
+                    "a piece of writing that tells events in a chronological sequence.",
+                    "a piece of writing about an important event or situation that happen on a particular day.",
+                    "a piece of writing which consists of instructions to follow.",
+                    "a humorous story that tells events in a chronological sequence with a twist."
                 ],
-                correctAnswer: 1 // Index of the correct answer (a)
+                correctAnswer: 3
             },
             {
-                question: "Gerakan wasit menunjuk titik tengah pada saat permainan sepak bola berlangsung berarti memberi isyarat …..",
+                question: "Below are the Language Feature of Descriptive Text, except ...",
                 options: [
-                    "Tendangan bebas",
-                    "Corner",
-                    "Gol sah",
-                    "Terjadi pelanggaran",
-                    "Tidak terjadi pelanggaran"
+                    "Specific participant",
+                    "Use of the adjective (an adjective) to clarify the noun",
+                    "Use simple present tense",
+                    "Use action verb",
+                    "Use imperative sentence"
                 ],
-                correctAnswer: 2 // Index of the correct answer (b)
+                correctAnswer: 4
             },
             {
-                question: "Seorang pemain bola voli tergolong pemain yang baik dalam bertahan, apabila …..",
+                question: "The following sentences are the examples of procedure text except ….",
                 options: [
-                    "Mampu melakukan smash",
-                    "Mampu memberi umpan yang baik untuk dilakukan smash",
-                    "Mampu mengimbangi dan bertahan dari serangan lawan",
-                    "Mampu melakukan service dengan baik",
-                    "Mampu memimpin regu dengan baik"
+                    "How to make fried rice",
+                    "Bawang Merah and Bawang Putih",
+                    "How to cook rice with rice cooker",
+                    "How to upload video on Youtube",
+                    "How to make ice cube"
                 ],
-                correctAnswer: 2 // Index of the correct answer (b)
+                correctAnswer: 1
             },
             {
-                question: "Permulaan permainan bola basket dimulai dengan bola loncat (jump ball), yang dilakukan di …..",
+                question: "What's the purpose of Procedure text ?",
                 options: [
-                    "Tepi lapangan",
-                    "Tengah lingkaran lapangan",
-                    "Sudut lapangan",
-                    "Garis belakang",
-                    "Samping lapangan"
+                    "To describe how to make something",
+                    "To give detail information",
+                    "To entertain the reader",
+                    "To describe something generally",
+                    "To tell about person"
                 ],
-                correctAnswer: 1 // Index of the correct answer (c)
+                correctAnswer: 0
             },
             {
-                question: "Pada pertandingan bulu tangkis untuk ganda putra dan putri, bila bola tinggi di daerah lawan lakukan pertahanan dengan posisi …..",
+                question: "What can be described in a descriptive text?",
                 options: [
-                    " Silang",
-                    "Muka dan belakang",
-                    "Di muka semua",
-                    " Bersebelahan kanan dan kiri",
-                    "Di sebelah kiri semua"
+                    "A person",
+                    "An animal",
+                    "Something",
+                    "All of the above",
+                    "A place"
                 ],
-                correctAnswer: 3 // Index of the correct answer (d)
+                correctAnswer: 3
             },
             {
-                question: "Skor kemenangan partai ganda putra, ganda putri, dan ganda campuran pada pertandingan bulu tangkis yang berlaku sekarang ini adalah …..",
+                question: "The generic structure of narrative text are...",
                 options: [
-                    "7",
-                    "15",
-                    "21",
-                    "25",
-                    "27"
+                    "Complication, Resolution, and Orientation.",
+                    "Resolution, Orientation, and Complication.",
+                    "Orientation, Resolution, and Complication.",
+                    "Orientation, Complication, and Resolution.",
+                    "Resolution, Complication, and Orientation"
                 ],
-                correctAnswer: 2 // Index of the correct answer (e)
+                correctAnswer: 3
             },
             {
-                question: "Ukuran tempat mendarat untuk lompat tinggi minimal …..",
+                question: "A story that takes a familiar fairy tales and turns it upside down, making it funny and giving it a modern twist is called a..........................stories.",
                 options: [
-                    "5 x 6 m",
-                    "6 x 6 m",
-                    "5 x 5 m",
-                    "4 x 4 m",
-                    "4 x 5 m"
+                    "fractured stories",
+                    "sad stories",
+                    "funny stories",
+                    "happy ending stories",
+                    "happy stories"
                 ],
-                correctAnswer: 4 // Index of the correct answer (a)
+                correctAnswer: 0
             },
             {
-                question: "Berikut ini adalah ketentuan yang menyebabkan seorang pelompat jauh mengalami diskualifikasi, kecuali …..",
+                question: "Attention : Parent of SMK Erlangga Students The principle of SMK Erlangga invites you to attend the annual parent meeting 2020/2021 What : Parent Advisory Commitee When : Saturday, July 16th ,2020 09.00 – 13.00 p.m Where : Gengdock Student Hall Jl. Wastu kencana no 10 Bandung Learn, listen, ask question, and tell us your ideas. What is the purpose of the invitation...",
                 options: [
-                    "Dipanggil 3 menit belum melompat",
-                    " Menumpu dengan 2 kaki",
-                    "Setelah melompat, kembali ke arah awalan",
-                    "Mendarat di luar bak lompat",
-                    "Melakukan awalan di lintasan secepatnya"
+                    "The annual parent meeting",
+                    "The annual principle meeting",
+                    "The annual OSIS SMK Erlangga meeting",
+                    "The annual teacher meeting",
+                    "The annual parent advisory commitee"
                 ],
-                correctAnswer: 4 // Index of the correct answer (b)
+                correctAnswer: 4
             },
             {
-                question: "Berikut ini ketentuan peserta tolak peluru dinyatakan gagal melakukan tolakan, kecuali …..",
+                question: "What is a narrative?",
                 options: [
-                    "Menyentuh balok batas sebelah atas",
-                    "Menyentuh tanah di luar lingkaran",
-                    "Keluar masuk lingkaran dari muka garis tengah",
-                    "Peluru jatuh di luar sektor lingkaran",
-                    "Keluar lingkaran berjalan dengan tenang"
+                    "A story",
+                    "Poetry",
+                    "A biography",
+                    "A research project",
+                    "Poem"
                 ],
-                correctAnswer: 4 // Index of the correct answer (c)
+                correctAnswer: 0
             },
             {
-                question: "Jika hasil lemparan seorang atlet lempar lembing tidak membekas di tanah, maka …..",
+                question: "In the last paragraph (Re-orientation), it contains about ....",
                 options: [
-                    "Lemparan dianggap sah",
-                    "Diulang sekali lagi",
-                    "Diskualifikasi",
-                    "Dibatalkan",
-                    "Hasilnya nol"
+                    "The opening part of a story",
+                    "Conclusion and moral value",
+                    "The second part of a story",
+                    "The content of the story",
+                    "The closing of story"
                 ],
-                correctAnswer: 2 // Index of the correct answer (d)
+                correctAnswer: 1
             },
             {
-                question: "Bagian tubuh yang dilarang diserang dalam pencak silat adalah …..",
+                question: "The Bear and the Two Friends Once, two friends were walking through the forest. They knew that anything dangerous can happen to them at any time in the forest. So they promised each other that they would remain united in case of danger. Suddenly, they saw a large bear approaching tern. One of the friends at once climbed a nearby tree. But the other one did not know how to climb. So being led by his common sense, he lay down on the ground breathless, pretending to be a dead man. The bear came near the man lying on the ground. It smelt his ears and slowly left the place. Because the bear did not touch him, the friend on the tree came down and asked his friend on the ground, 'Friend, what did the bear tell you into your ears?'The other friend replied, 'He advised me not to believe a false friend. What can we get from the story?",
                 options: [
-                    "Perut",
-                    "Kemaluan",
-                    "Tangan",
-                    "Kaki",
-                    "Badan bagian atas"
+                    "We have to save our live",
+                    "We have to learn how to climb",
+                    "Bear will not harm a dead man",
+                    "True friend will stand by us in ups and down",
+                    "True friend will stand by us in ups and down"
                 ],
-                correctAnswer: 1 // Index of the correct answer (e)
+                correctAnswer: 3
             },
             {
-                question: "Salah satu tugas hakim garis permainan sepak bola adalah …..",
+                question: "Which one of these generic structures that we use to tell information about character, time, and place of the story?",
                 options: [
-                    "Memutuskan terjadinya pelanggaran",
-                    "Menentukan posisi off-side",
-                    "Menghukum pemain",
-                    "Menghentikan permainan",
-                    "Menentukan pelanggaran peraturan"
+                    "Orientation",
+                    "Complication",
+                    "Resolution",
+                    "Re-orientation/coda",
+                    "Title"
                 ],
-                correctAnswer: 4 // Index of the correct answer (a)
+                correctAnswer: 0
             },
             {
-                question: "Apabila terjadi tendangan sudut, maka posisi wasit berada di …..",
+                question: "Attention : Parent of SMK Erlangga Students The principle of SMK Erlangga invites you to attend the annual parent meeting 2020/2021 What : Parent Advisory Commitee When : Saturday, July 16th ,2020 09.00 – 13.00 p.m Where : Gengdock Student Hall Jl. Wastu kencana no 10 Bandung Learn, listen, ask question, and tell us your ideas. When the meeting is started?",
                 options: [
-                    "Tengah lapangan",
-                    " Garis 16 m",
-                    "Belakang gawang",
-                    "Tengah garis 16 m",
-                    "Tergantung kondisi"
+                    "Monday,16th,2020 at 09.00 – 13.00",
+                    "Thursday,16th, 2020 at 09.00 – 13.00",
+                    "Sunday, 16th, 2020 at 09.00 – 13.00",
+                    "Wednesday, 16th, 2020 at 09.00 – 13.00",
+                    "Saturday,16th, 2020 at 09.00 – 13.00"
                 ],
-                correctAnswer: 1 // Index of the correct answer (b)
+                correctAnswer: 4
             },
             {
-                question: "Apabila terjadi tendangan penalti, maka posisi wasit berada di …..",
+                question: "Woman : Do you mind if I use your computer? Man : No. Please shut it down after you finish. Woman : I will. Thank you. What will the man do?",
                 options: [
-                    "Di samping kiri sejajar dengan bola",
-                    " Di samping kanan sejajar dengan bola",
-                    "Di samping sejajar dengan penjaga gawang",
-                    " Di belakang gawang",
-                    " Tergantung situasi dan kondisi"
+                    "Finish his work.",
+                    "Lend his computer.",
+                    "Borrow the computer.",
+                    "Shut down the laptop.",
+                    "Thank the woman"
                 ],
-                correctAnswer: 0 // Index of the correct answer (c)
+                correctAnswer: 2
             },
             {
-                question: "Apabila wasit mengangkat salah satu tangan lurus ke arah dengan tangan kanan / kiri berarti pelanggaran dengan hukuman tendangan …..",
+                question: "If I passed the state university entrance test, My father would buy me a new motorcycle.' It means that …",
                 options: [
-                    "Bebas langsung",
-                    "Penalty",
-                    "Bebas tidak langsung",
-                    "Penjuru",
-                    "Gawang"
+                    "I don’t pass the state university entrance test.",
+                    "I didn’t pass the state university entrance test.",
+                    "I wasn’t passing the state university entrance test.",
+                    "I am not passing the state university entrance test.",
+                    "I passed the exam"
                 ],
-                correctAnswer: 2 // Index of the correct answer (d)
+                correctAnswer: 1
             },
             {
-                question: "Yang tidak termasuk teknik permainan bola voli di bawah ini adalah …..",
+                question: "If I …………. John, I would ask Mary for a date.",
                 options: [
-                    "Service",
-                    "Passing atas",
-                    "Passing atas",
-                    "Smash / serangan",
-                    "Block / bendungan"
+                    "were",
+                    "are",
+                    "will be",
+                    "am",
+                    "would be"
                 ],
-                correctAnswer: 2 // Index of the correct answer (e)
-            },
-            {
-                question: "Teknik jatuhan pencak silat yang berhasil menjatuhkan lawan sehingga bagian tubuh dari lutut ke atas menyentuh lantai, mendapat nilai …..",
-                options: [
-                    "Satu",
-                    "Dua",
-                    "Tiga",
-                    "Empat",
-                    "Lima"
-                ],
-                correctAnswer: 2 // Index of the correct answer (a)
-            },
-            {
-                question: "Mengunjungi peninggalan masa lalu, mengenali adat istiadat dan mengunjungi tempat-tempat bersejarah, hal ini merupakan fungsi rekreasi dilihat dari …..",
-                options: [
-                    "Pengetahuan",
-                    "Keterampilan",
-                    "Sosial",
-                    " Kepribadian",
-                    "Cinta tanah air"
-                ],
-                correctAnswer: 0 // Index of the correct answer (b)
-            },
-            {
-                question: "Bahaya yang sering terjadi pada saat melakukan kegiatan di alam terbuka lebih banyak diakibatkan oleh …..",
-                options: [
-                    " Binatang buas",
-                    "Tanah longsor",
-                    "Cuaca buruk",
-                    " Kelalaian manusia",
-                    "Pencemaran"
-                ],
-                correctAnswer: 2 // Index of the correct answer (c)
-            },
-            {
-                question: "Skor kemenangan partai tunggal putra / putri, ganda putra, ganda putri, pada pertandingan tenis meja yang berlaku sekarang ini adalah …..",
-                options: [
-                    "11",
-                    "15",
-                    "21",
-                    "25",
-                    "27"
-                ],
-                correctAnswer: 0 // Index of the correct answer (d)
-            },
-            {
-                question: "Skor kemenangan pertandingan sepak takraw putra / putri yang berlaku sekarang ini adalah …..",
-                options: [
-                    "11",
-                    "15",
-                    "21",
-                    "25",
-                    "27"
-                ],
-                correctAnswer: 2 // Index of the correct answer (e)
-            },
-            {
-                question: "Sistem servis yang berlaku pada saat ini pada pertandingan sepak takraw yang dilakukan oleh tekong sebanyak ….. kali, setelah itu bola berpindah ke lawan.",
-                options: [
-                    "Satu",
-                    "Dua",
-                    "Tiga",
-                    "Empat",
-                    "Lima"
-                ],
-                correctAnswer: 2 // Index of the correct answer (a)
-            },
-            {
-                question: "Negara sebagai penyelenggara Sea Games ke-29 tahun 2017 adalah …..",
-                options: [
-                    "Indonesia",
-                    "Malaysia",
-                    "Thailand",
-                    "Vietnam",
-                    "Filipina"
-                ],
-                correctAnswer: 1 // Index of the correct answer (b)
-            },
-            {
-                question: "Negara yang ditunjuk sebagai penyelenggara Sea Games ke-30 tahun 2019 adalah …..",
-                options: [
-                    "Indonesia",
-                    "Malaysia",
-                    "Thailand",
-                    "Vietnam",
-                    "Filipina"
-                ],
-                correctAnswer: 4 // Index of the correct answer (c)
-            },
-            {
-                question: "Dalam perlombaan renang semua gaya, waktu berbalik dan finish perenang harus menyentuh …..",
-                options: [
-                    "Dasar kolam",
-                    "Pegangan start",
-                    "Dinding kolam",
-                    "Balok start",
-                    "Garis lintasan"
-                ],
-                correctAnswer: 2 // Index of the correct answer (d)
-            },
-            {
-                question: "Teknik renang gaya dada saat kedua tangan menjulur ke depan bersamaan dengan majunya badan, bahu harus ….. air",
-                options: [
-                    "Diangkat di atas",
-                    "Masuk ke dalam",
-                    "Sejajar dengan",
-                    "Miring dengan",
-                    "Tidak sejajar"
-                ],
-                correctAnswer: 2 // Index of the correct answer (e)
-            },
-            {
-                question: "Tahap persiapan pada teknik dasar renang pertolongan sikap badan …..",
-                options: [
-                    "Telungkup",
-                    "Tengkurap",
-                    "Miring",
-                    " Jongkok",
-                    "Telentang"
-                ],
-                correctAnswer: 4 // Index of the correct answer (a)
-            },
-            {
-                question: "Jika korban dalam posisi membelakangi penolong, maka penolong harus …..",
-                options: [
-                    "Berputar-putar ke depan korban",
-                    "Berputar ke depan korban",
-                    "Berputar ke belakang korban",
-                    "Menyelam ke dalam air",
-                    "Menarik korban"
-                ],
-                correctAnswer: 4 // Index of the correct answer (b)
-            },
-            {
-                question: "Teknik dasar renang membawa korban dengan memegang kepala korban, posisi mulut korban dan penolong ….",
-                options: [
-                    "Di bawah",
-                    "Di dalam air",
-                    "Di dasar kolam",
-                    "Di permukaan air",
-                    "Menarik air"
-                ],
-                correctAnswer: 3 // Index of the correct answer (c)
-            },
-            {
-                question: "Alat yang digunakan untuk menolong orang yang tenggelam adalah ….",
-                options: [
-                    "Ban karet",
-                    "Motor boat",
-                    "Perahu karet",
-                    "Pelampung",
-                    "Ban bekas"
-                ],
-                correctAnswer: 0 // Index of the correct answer (d)
-            },
-            {
-                question: "Berikut ini adalah tips makanan sehat, kecuali ….",
-                options: [
-                    "Konsumsi makanan yang kaya nutrisi",
-                    "Konsumsi padi-padian, buah, dan sayuran",
-                    "Atur berat badan seimbang",
-                    "Makan dalam ukuran yang banyak",
-                    "Makan secara teratur"
-                ],
-                correctAnswer: 3 // Index of the correct answer (e)
-            },
-            {
-                question: "Mentega dari susu, ikan, dan semua lemak hewan yang terdapat dalam daging termasuk sumber ….",
-                options: [
-                    "Lemak nabati",
-                    "Protein hewani",
-                    "Lemak hewani",
-                    "Protein nabati",
-                    "Karbohidrat"
-                ],
-                correctAnswer: 2// Index of the correct answer (a)
-            },
-            {
-                question: "Vaksinasi untuk mendapatkan kekebalan terhadap ….",
-                options: [
-                    "Makanan",
-                    "Penyakit",
-                    "Olahraga",
-                    "Gangguan",
-                    "Guru"
-                ],
-                correctAnswer: 1 // Index of the correct answer (b)
-            },
-            {
-                question: "Pada kegiatan alam bebas sering terjadinya penderita shock. Cara menanganinya yaitu pakaian penderita harus ….",
-                options: [
-                    "Dirapikan",
-                    "Dikencangkan",
-                    "Disempitkan",
-                    "Dilonggarkan ",
-                    "Diketahui"
-                ],
-                correctAnswer: 3 // Index of the correct answer (c)
-            },
-            {
-                question: "Langkah untuk melindungi orang lain terhadap penularan penyakit adalah ….",
-                options: [
-                    "Penyuluhan",
-                    "Vaksinasi",
-                    "Sanitasi",
-                    "Donor darah",
-                    "Minum obat"
-                ],
-                correctAnswer: 1 // Index of the correct answer (d)
-            },
-            {
-                question: "Untuk meningkatkan daya tahan tubuh dan kesehatan jasmani dengan ….",
-                options: [
-                    "Latihan kelincahan",
-                    "Latihan kelenturan",
-                    "Latihan beban",
-                    "Olahraga teratur",
-                    "Abaikan olahraga"
-                ],
-                correctAnswer: 3 // Index of the correct answer (e)
-            },
-            {
-                question: "Yang tidak termasuk manfaat kegiatan wisata budaya berikut ini adalah ….",
-                options: [
-                    "Menghayati kebudayaan daerah",
-                    "Menghayati peninggalan sejarah",
-                    "Menghayati adat tradisional",
-                    "Mempererat rasa kebangsaan",
-                    "Memperingati hari pahlawan"
-                ],
-                correctAnswer: 4 // Index of the correct answer (a)
-            },
-            {
-                question: "Peserta kegiatan di alam bebas harus telah siap secara ….",
-                options: [
-                    "Alat-alat",
-                    " Perkakas",
-                    "Teknik",
-                    "Fisik/mental",
-                    "Kekuatan"
-                ],
-                correctAnswer: 3 // Index of the correct answer (b)
-            },
-            {
-                question: "Dalam kegiatan di alam bebas yang perlu kita tanamkan dalam mempraktikkan …",
-                options: [
-                    "Strategi",
-                    " Teknik",
-                    "Taktik",
-                    "Keterampilan teknis yang benar",
-                    "Keterampilan lemah"
-                ],
-                correctAnswer: 3 // Index of the correct answer (c)
-            },
-            {
-                question: "Yang merupakan objek yang dapat dikunjungi dalam kegiatan wisata budaya sebagai rekreasi pendidikan adalah ……",
-                options: [
-                    " Pegunungan",
-                    "Kolam renang",
-                    "Cagar alam",
-                    "Taman hiburan",
-                    "Museum"
-                ],
-                correctAnswer: 4 // Index of the correct answer (d)
+                correctAnswer: 0
             }
         ];
 
@@ -1119,6 +873,22 @@
                 questionElement.textContent = `Q: ${item.question}`;
                 
                 qaItem.appendChild(questionElement);
+                
+                // Tambahkan gambar jika ada
+                if (item.image) {
+                    const imageElement = document.createElement('img');
+                    imageElement.className = 'question-image';
+                    imageElement.src = item.image;
+                    imageElement.alt = 'Gambar pertanyaan';
+                    imageElement.loading = 'lazy'; // Lazy loading untuk performa
+                    
+                    // Tambahkan event listener untuk memperbesar gambar saat diklik (opsional)
+                    imageElement.addEventListener('click', function() {
+                        this.classList.toggle('enlarged');
+                    });
+                    
+                    qaItem.appendChild(imageElement);
+                }
                 
                 // Create option elements (a, b, c, d, e)
                 const optionLabels = ['a', 'b', 'c', 'd', 'e'];
