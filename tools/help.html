@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon-el.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>TKJBoys - Help & FAQ</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* FAQ Accordion Styles */
+        .faq-container {
+            margin-bottom: 50px;
+        }
+        
+        .faq-section {
+            margin-bottom: 30px;
+        }
+        
+        .faq-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .faq-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: #fff;
+            color: var(--dark-color);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+            color: var(--primary-color);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        
+        .faq-answer-content {
+            padding-bottom: 20px;
+        }
+
+        .faq-answer-content ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        
+        .faq-answer img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 5px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: #f9f9f9;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 20px 20px 0;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive Styles for FAQ */
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 15px;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 15px 15px 0;
+            }
+
+            .faq-answer img {
+                max-width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="help-header">
+        <div class="header-container" style="position: relative; background: rgba(0, 0, 0, 0.9);">
+            <div class="logo" aria-label="Website Logo">
+                <h1><span>TKJ</span>Helps</h1>
+            </div>
+            <nav>
+                <div class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="../index.html#about" class="nav-link">Tentang</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">The Boys  <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../index.html#class-photos" class="nav-link">The Boys</a></li>
+                            <li><a href="../index.html#pkl" class="nav-link">PKL</a></li>
+                            <li><a href="../index.html#gallery" class="nav-link">Gallery</a></li>
+                            <li><a href="../index.html#testimonials" class="nav-link">Quotes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Tools  <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pjok.html" class="nav-link">Q&A Search</a></li>
+                            <li><a href="#" class="nav-link">Comming soon</a></li>
+                            <li><a href="#" class="nav-link">Comming soon</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../blogs/index.html" class="nav-link">Blogs</a></li>
+                    <li><a href="help.html" class="nav-link">Bantuan</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Kontak dan Saran</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div style="text-align: center; padding: 40px 20px 20px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Help & FAQs</h2>
+            <p style="font-size: 1.1rem;">Temukan jawaban atas pertanyaan umum tentang situs web dan layanan kami</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="faq-container">
+            <!-- General Questions Section -->
+            <div class="faq-section">
+                <h2>Pertanyaan Umum</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is TKJBoys?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>TKJBoys adalah situs web yang dibuat oleh siswa-siswa jurusan TKJ (Teknik Komputer dan Jaringan) dari SMKN 1 RENGAT BARAT. Situs ini berisi informasi tentang kelas kami, kegiatan, galeri foto, dan berbagai sumber belajar.</p>
+                            <img src="../images/bg-2.webp" alt="TKJBoys Class Photo">
+                            <p>Kami adalah angkatan ke-16 dari jurusan TKJ yang mulai bersekolah pada Juli 2023 dan akan lulus pada Juni 2026.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara mengakses semua fitur di website ini?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Anda dapat mengakses semua fitur website melalui menu navigasi di bagian atas halaman. Menu ini berisi link ke berbagai bagian seperti:</p>
+                            <!-- Keep the rest of the FAQ content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Features Section -->
+            <div class="faq-section">
+                <h2>Fitur Website</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara melihat galeri foto?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Untuk melihat galeri foto, ikuti langkah-langkah berikut:</p>
+                            <ol>
+                                <li>Scroll ke bagian "Gallery" pada halaman utama atau klik "Gallery" pada menu navigasi</li>
+                                <li>Klik pada album yang ingin Anda lihat</li>
+                                <li>Jika album dilindungi password, masukkan password yang sesuai *minta teman TKJ anda*</li>
+                                <li>Album akan terbuka dan Anda dapat melihat semua foto di dalamnya</li>
+                            </ol>
+                            <img src="../images/help/password.webp" alt="Gallery Section">
+                            <p>Anda dapat mengklik foto untuk melihatnya dalam ukuran yang lebih besar.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara mengakses blog?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Untuk mengakses blog, Anda dapat:</p>
+                            <ol>
+                                <li>Klik "Blogs" pada menu navigasi utama</li>
+                                <li>Atau scroll ke bagian "Blogs" pada halaman utama dan klik "View All Blogs"</li>
+                            </ol>
+                            <p>Di halaman blog, Anda dapat mencari artikel berdasarkan kategori atau menggunakan kotak pencarian untuk menemukan topik tertentu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact & Feedback Section -->
+            <div class="faq-section">
+                <h2>Kontak dan Saran</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara memberikan kritik dan saran?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Untuk memberikan kritik dan saran, Anda dapat menggunakan form yang tersedia di bagian "Kontak dan Saran" pada halaman utama. Caranya:</p>
+                            <ol>
+                                <li>Scroll ke bagian "Kontak dan Saran" di bagian bawah halaman utama atau klik "Kontak dan Saran" pada menu navigasi</li>
+                                <li>Isi form dengan nama, email, dan pesan Anda</li>
+                                <li>Email yang dimasukan tidak perlu Email pribadi anda. bisa menggunakan email random yang memili simbol '@' atau template seperti ini: 
+                                    <code>tkj@email.com</code>
+                                <strong>Jika ingin ada balsan masukan email asli</strong>
+                                </li>
+                                <li>Klik tombol "Kirim Pesan"</li>
+                            </ol>
+                            <img src="../images/help/k&s.webp" alt="Contact Form">
+                            <p>Kami sangat menghargai masukan Anda untuk meningkatkan kualitas website kami.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara menghubungi tim TKJBoys?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Anda dapat menghubungi tim TKJBoys melalui:</p>
+                            <ul>
+                                <li>Email: tkj16@boys.com</li>
+                                <li>Telepon: (+62)851-3410-9503</li>
+                                <li>Media sosial: Klik ikon Instagram di bagian "Kontak dan Saran" untuk melihat daftar akun Instagram anggota tim</li>
+                            </ul>
+                            <img src="../images/help/list-ig.webp" alt="IG List">
+                            <p>Kami akan merespons pesan Anda secepat mungkin, biasanya dalam waktu 1-2 hari kerja.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../index.html#contact">Tambahkan FAQ</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>TKJHelps</h3>
+                    <p>Temukan jawaban atas pertanyaan umum tentang situs web dan layanan kami</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Beranda</a></li>
+                        <li><a href="../index.html#about">Tentang</a></li>
+                        <li><a href="../index.html#class-photos">The boys</a></li>
+                        <li><a href="../index.html#pkl">PKL</a></li>
+                        <li><a href="../index.html#gallery">Gallery</a></li>
+                        <li><a href="../index.html#testimonials">Quotes</a></li>
+                        <li><a href="../index.html#blogs">Blogs</a></li>
+                        <li><a href="../index.html#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TKJBoys. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion Functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

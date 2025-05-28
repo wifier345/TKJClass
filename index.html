@@ -42,6 +42,7 @@
                         </ul>
                     </li>
                     <li><a href="#blogs" class="nav-link">Blogs</a></li>
+                    <li><a href="tools/help.html" class="nav-link">Bantuan</a></li>
                     <li><a href="#contact" class="nav-link">Kontak dan Saran</a></li>
                 </ul>
             </nav>
@@ -303,7 +304,7 @@
                         </div>
                     </div>
                     <div class="album-info">
-                        <h3 class="album-title">Buker</h3>
+                        <h3 class="album-title">Bukber</h3>
                         <p class="album-date">19 Maret, 2025</p>
                     </div>
                 </div>
@@ -339,7 +340,7 @@
                 <!-- Album 4 -->
                 <div class="album-card animate-on-scroll fade-in" data-delay="300" data-album-id="album4">
                     <div class="album-thumbnail">
-                        <img src="images/album/a4/5.webp" alt="Tubali 6 Anomali" loading="lazy">
+                        <img src="images/album/a4/5.webp"  loading="lazy">
                         <div class="album-overlay">
                             <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
                         </div>
@@ -347,6 +348,79 @@
                     <div class="album-info">
                         <h3 class="album-title">Siak</h3>
                         <p class="album-date">8 September, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Album 5 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="300" data-album-id="album5">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a5/1.webp"  loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Rendang Hunter</h3>
+                        <p class="album-date">akhir s1, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Album 6 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="300" data-album-id="album6">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a6/1.webp"  loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">damn</h3>
+                        <p class="album-date">forget, 2024</p>
+                    </div>
+                </div>
+
+
+                <!-- Album 7 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="300" data-album-id="album7">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a7/1.webp"  loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Kau Masih Pramuke?</h3>
+                        <p class="album-date">forget, 2024</p>
+                    </div>
+                </div>
+
+
+                <!-- Album 8 -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="300" data-album-id="album8">
+                    <div class="album-thumbnail">
+                        <img src="images/album/a8/1.webp"  loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">RGT</h3>
+                        <p class="album-date">forget, 2024</p>
+                    </div>
+                </div>
+
+
+                <!-- Album aib -->
+                <div class="album-card animate-on-scroll fade-in" data-delay="300" data-album-id="albumAib" data-protected="true">
+                    <div class="album-thumbnail">
+                        <img src="images/album/aib/1.webp"  loading="lazy">
+                        <div class="album-overlay">
+                            <span class="album-view"><i class="fas fa-images"></i> Lihat Album</span>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <h3 class="album-title">Just For Fun</h3>
+                        <p class="album-date">aib kabeh euy</p>
                     </div>
                 </div>
             </div>
@@ -644,6 +718,24 @@
         <span class="modal-close">&times;</span>
         <img class="modal-content" id="modal-img">
         <div id="modal-caption"></div>
+    </div>
+
+    <!-- Password Modal for Protected Albums -->
+    <div id="password-modal" class="password-modal">
+        <div class="password-modal-content">
+            <div class="password-modal-header">
+                <h3>Album Terkunci</h3>
+                <span class="password-modal-close">&times;</span>
+            </div>
+            <div class="password-modal-body">
+                <p>Album ini dilindungi dengan password. Silakan masukkan password untuk melihat.</p>
+                <div class="password-input-container">
+                    <input type="password" id="album-password" placeholder="Masukkan password...">
+                    <div class="password-error">Password salah, silakan coba lagi.</div>
+                </div>
+                <button id="submit-password" class="password-submit-btn">Buka Album</button>
+            </div>
+        </div>
     </div>
 
     <!-- Modal for Instagram Accounts -->

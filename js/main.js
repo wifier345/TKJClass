@@ -814,21 +814,28 @@ const albumModalTitle = document.getElementById('album-modal-title');
 const albumImages = document.getElementById('album-images');
 const albumModalClose = document.querySelector('.album-modal-close');
 
+// Password modal elements
+const passwordModal = document.getElementById('password-modal');
+const passwordInput = document.getElementById('album-password');
+const submitPasswordBtn = document.getElementById('submit-password');
+const passwordError = document.querySelector('.password-error');
+const passwordModalClose = document.querySelector('.password-modal-close');
+
 // Album data - you can expand this with more images for each album
 const albumData = {
     album1: {
         title: "Bukber",
         date: "19 Maret, 2025",
         images: [
-            { src: "images/album/a1/1.webp", caption: "Buker - Image 1" },
-            { src: "images/album/a1/2.webp", caption: "Buker - Image 2" },
-            { src: "images/album/a1/3.webp", caption: "Buker - Image 3" },
-            { src: "images/album/a1/4.webp", caption: "Buker - Image 4" },
-            { src: "images/album/a1/5.webp", caption: "Buker - Image 5" },
-            { src: "images/album/a1/6.webp", caption: "Buker - Image 6" },
-            { src: "images/album/a1/7.webp", caption: "Buker - Image 7" },
-            { src: "images/album/a1/8.webp", caption: "Buker - Image 8" },
-            { src: "images/album/a1/9.webp", caption: "Buker - Image 9" }
+            { src: "images/album/a1/2.webp", caption: "Bukber - Image 2" },
+            { src: "images/album/a1/1.webp", caption: "Bukber - Image 1" },
+            { src: "images/album/a1/3.webp", caption: "Bukber - Image 3" },
+            { src: "images/album/a1/4.webp", caption: "Bukber - Image 4" },
+            { src: "images/album/a1/5.webp", caption: "Bukber - Image 5" },
+            { src: "images/album/a1/6.webp", caption: "Bukber - Image 6" },
+            { src: "images/album/a1/7.webp", caption: "Bukber - Image 7" },
+            { src: "images/album/a1/8.webp", caption: "Bukber - Image 8" },
+            { src: "images/album/a1/9.webp", caption: "Bukber - Image 9" }
         ]
     },
     album2: {
@@ -869,47 +876,205 @@ const albumData = {
             { src: "images/album/a4/9.webp", caption: "Siak - Image 9" },
             { src: "images/album/a4/10.webp", caption: "Siak - Image 10" },
         ]
+    },
+    album5: {
+        title: "Rendang Hunter",
+        date: "akhir s1, 2024",
+        images: [
+            { src: "images/album/a5/1.webp", caption: "RH - Image 1" },
+            { src: "images/album/a5/2.webp", caption: "RH - Image 2" },
+            { src: "images/album/a5/3.webp", caption: "RH - Image 3" },
+            { src: "images/album/a5/4.webp", caption: "RH - Image 4" },
+            { src: "images/album/a5/5.webp", caption: "RH - Image 5" },
+            { src: "images/album/a5/6.webp", caption: "RH - Image 6" },
+            { src: "images/album/a5/7.webp", caption: "RH - Image 7" },
+            { src: "images/album/a5/8.webp", caption: "RH - Image 8" }
+        ]
+    },
+    album6: {
+        title: "damn",
+        date: "forget, 2024",
+        images: [
+            { src: "images/album/a6/1.webp", caption: "DAMN - Image 1" },
+            { src: "images/album/a6/2.webp", caption: "DAMN - Image 2" },
+            { src: "images/album/a6/3.webp", caption: "DAMN - Image 3" },
+            { src: "images/album/a6/4.webp", caption: "DAMN - Image 4" },
+            { src: "images/album/a6/5.webp", caption: "DAMN - Image 5" },
+            { src: "images/album/a6/6.webp", caption: "DAMN - Image 6" }
+        ]
+    },
+    album7: {
+        title: "Kau Masih Pramuke?",
+        date: "Forget, 2024",
+        images: [
+            { src: "images/album/a7/1.webp", caption: "Pramuk - Image 1" },
+            { src: "images/album/a7/2.webp", caption: "Pramuk - Image 2" },
+            { src: "images/album/a7/3.webp", caption: "Pramuk - Image 3" },
+            { src: "images/album/a7/4.webp", caption: "Pramuk - Image 4" },
+            { src: "images/album/a7/5.webp", caption: "Pramuk - Image 5" },
+            { src: "images/album/a7/6.webp", caption: "Pramuk - Image 6" },
+            { src: "images/album/a7/7.webp", caption: "Pramuk - Image 7" },
+            { src: "images/album/a7/8.webp", caption: "Pramuk - Image 8" },
+            { src: "images/album/a7/9.webp", caption: "Pramuk - Image 9" },
+            { src: "images/album/a7/10.webp", caption: "Pramuk - Image 10" },
+            { src: "images/album/a7/11.webp", caption: "Pramuk - Image 11" }
+        ]
+    },
+    album8: {
+        title: "RGT",
+        date: "forget, 2024",
+        images: [
+            { src: "images/album/a8/1.webp", caption: "R - Image 1" },
+            { src: "images/album/a8/2.webp", caption: "R - Image 2" },
+            { src: "images/album/a8/3.webp", caption: "R - Image 3" },
+            { src: "images/album/a8/4.webp", caption: "R - Image 4" }
+        ]
+    },
+    albumAib: {
+        title: "AIB TKJ",
+        date: "akhir s1, 2024",
+        password: "TKJAib",
+        images: [
+            { src: "images/album/aib/1.webp", caption: "aib - Image 1" },
+            { src: "images/album/aib/2.webp", caption: "aib - Image 2" },
+            { src: "images/album/aib/3.webp", caption: "aib - Image 3" },
+            { src: "images/album/aib/4.webp", caption: "aib - Image 4" },
+            { src: "images/album/aib/5.webp", caption: "aib - Image 5" },
+            { src: "images/album/aib/6.webp", caption: "aib - Image 6" },
+            { src: "images/album/aib/8.webp", caption: "aib - Image 8" },
+            { src: "images/album/aib/9.webp", caption: "aib - Image 9" },
+            { src: "images/album/aib/10.webp", caption: "aib - Image 10" },
+            { src: "images/album/aib/11.webp", caption: "aib - Image 11" },
+            { src: "images/album/aib/12.webp", caption: "aib - Image 12" },
+            { src: "images/album/aib/13.webp", caption: "aib - Image 13" },
+            { src: "images/album/aib/14.webp", caption: "aib - Image 14" }
+        ]
     }
 };
+
+// Variable to store current album being accessed
+let currentAlbumId = null;
+
+// Function to open album modal and display images
+function openAlbumModal(albumId) {
+    const album = albumData[albumId];
+    
+    if (album) {
+        // Set modal title
+        albumModalTitle.textContent = album.title;
+        
+        // Clear previous images
+        albumImages.innerHTML = '';
+        
+        // Add images to modal
+        album.images.forEach(image => {
+            const imageItem = document.createElement('div');
+            imageItem.className = 'album-image-item';
+            
+            const img = document.createElement('img');
+            img.src = image.src;
+            img.alt = image.caption;
+            
+            const caption = document.createElement('div');
+            caption.className = 'album-image-caption';
+            caption.textContent = image.caption;
+            
+            imageItem.appendChild(img);
+            imageItem.appendChild(caption);
+            albumImages.appendChild(imageItem);
+        });
+        
+        // Show modal
+        albumModal.style.display = 'block';
+        
+        // Prevent body scrolling when modal is open
+        document.body.style.overflow = 'hidden';
+    }
+}
 
 // Open album modal when clicking on an album card
 albumCards.forEach(card => {
     card.addEventListener('click', function() {
         const albumId = this.getAttribute('data-album-id');
+        const isProtected = this.getAttribute('data-protected') === 'true';
         const album = albumData[albumId];
         
         if (album) {
-            // Set modal title
-            albumModalTitle.textContent = album.title;
-            
-            // Clear previous images
-            albumImages.innerHTML = '';
-            
-            // Add images to modal
-            album.images.forEach(image => {
-                const imageItem = document.createElement('div');
-                imageItem.className = 'album-image-item';
+            // Check if album is password protected
+            if (isProtected && album.password) {
+                // Store current album ID for later use
+                currentAlbumId = albumId;
                 
-                const img = document.createElement('img');
-                img.src = image.src;
-                img.alt = image.caption;
+                // Reset password input and error message
+                passwordInput.value = '';
+                passwordError.style.display = 'none';
                 
-                const caption = document.createElement('div');
-                caption.className = 'album-image-caption';
-                caption.textContent = image.caption;
+                // Show password modal
+                passwordModal.style.display = 'block';
                 
-                imageItem.appendChild(img);
-                imageItem.appendChild(caption);
-                albumImages.appendChild(imageItem);
-            });
-            
-            // Show modal
-            albumModal.style.display = 'block';
-            
-            // Prevent body scrolling when modal is open
-            document.body.style.overflow = 'hidden';
+                // Focus on password input
+                setTimeout(() => {
+                    passwordInput.focus();
+                }, 100);
+                
+                // Prevent body scrolling
+                document.body.style.overflow = 'hidden';
+            } else {
+                // If not protected, open album directly
+                openAlbumModal(albumId);
+            }
         }
     });
+});
+
+// Handle password submission
+if (submitPasswordBtn) {
+    submitPasswordBtn.addEventListener('click', function() {
+        validatePassword();
+    });
+}
+
+// Allow Enter key to submit password
+if (passwordInput) {
+    passwordInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+            validatePassword();
+        }
+    });
+}
+
+// Password validation function
+function validatePassword() {
+    const enteredPassword = passwordInput.value;
+    const album = albumData[currentAlbumId];
+    
+    if (album && enteredPassword === album.password) {
+        // Password correct, close password modal and open album
+        passwordModal.style.display = 'none';
+        openAlbumModal(currentAlbumId);
+    } else {
+        // Password incorrect, show error
+        passwordError.style.display = 'block';
+        passwordInput.focus();
+    }
+}
+
+// Close password modal when clicking on X
+if (passwordModalClose) {
+    passwordModalClose.addEventListener('click', function() {
+        passwordModal.style.display = 'none';
+        // Re-enable body scrolling
+        document.body.style.overflow = '';
+    });
+}
+
+// Close password modal when clicking outside the content
+window.addEventListener('click', function(e) {
+    if (e.target === passwordModal) {
+        passwordModal.style.display = 'none';
+        // Re-enable body scrolling
+        document.body.style.overflow = '';
+    }
 });
 
 // Close album modal when clicking on X
@@ -918,8 +1083,8 @@ if (albumModalClose) {
         albumModal.style.display = 'none';
         // Re-enable body scrolling
         document.body.style.overflow = '';
-    });
-}
+    }
+)};
 
 // Close album modal when clicking outside the content
 window.addEventListener('click', function(e) {

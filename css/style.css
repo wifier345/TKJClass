@@ -147,6 +147,10 @@ header#home {
     position: relative;
 }
 
+header#help-header h1 {
+    color: white;
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -160,7 +164,7 @@ header#home {
     transition: var(--transition);
 }
 
-.blog-page-header .header-container  {
+.blog-page-header .header-container {
     background: rgba(0, 0, 0, 0.9);
     padding: 15px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -744,6 +748,129 @@ header#home {
 
 .album-images-container::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
+}
+
+/* Password Modal Styles */
+.password-modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.password-modal-content {
+    background-color: var(--dark-color);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.password-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.password-modal-header h3 {
+    color: var(--light-color);
+    margin: 0;
+    font-size: 20px;
+}
+
+.password-modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.password-modal-close:hover {
+    color: var(--primary-color);
+}
+
+.password-modal-body {
+    padding: 10px 0;
+}
+
+.password-modal-body p {
+    color: #aaa;
+}
+
+.password-input-container {
+    margin: 15px 0;
+    position: relative;
+}
+
+#album-password {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#album-password:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.password-error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.password-submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.password-submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Add a lock icon to protected albums */
+.album-card[data-protected="true"] .album-overlay {
+    position: absolute;
+}
+
+.album-card[data-protected="true"]:hover .album-overlay {
+    opacity: 1;
+}
+
+.album-card[data-protected="true"] .album-overlay::before {
+    content: '\f023';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 18px;
+    z-index: 2;
 }
 
 /* Modal */
