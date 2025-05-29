@@ -24,6 +24,7 @@
                 <ul class="nav-links">
                     <li><a href="../index.html">Beranda</a></li>
                     <li><a href="index.html" class="active">Blogs</a></li>
+                    <li><a href="../help.html" class="nav-link">Bantuan</a></li>
                     <li><a href="../index.html#contact">Kontak dan Saran</a></li>
                 </ul>
             </nav>
@@ -131,7 +132,7 @@
                 <!-- Blog Card 4 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="../images/activity-4.jpg" alt="Blog Post 4" loading="lazy">
+                        <img src="../images/blogs/b4-c.png" alt="Blog Post 4" loading="lazy">
                         <div class="blog-date">
                             <span class="day">01</span>
                             <span class="month">Jun</span>
@@ -148,7 +149,7 @@
                 <!-- Blog Card 5 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="../images/activity-5.jpg" alt="Blog Post 5" loading="lazy">
+                        <img src="../images/blogs/b5-c.png" alt="Blog Post 5" loading="lazy">
                         <div class="blog-date">
                             <span class="day">25</span>
                             <span class="month">May</span>
@@ -165,7 +166,7 @@
                 <!-- Blog Card 6 -->
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="../images/activity-6.jpg" alt="Blog Post 6" loading="lazy">
+                        <img src="../images/blogs/b6-c.png" alt="Blog Post 6" loading="lazy">
                         <div class="blog-date">
                             <span class="day">20</span>
                             <span class="month">May</span>
@@ -395,6 +396,29 @@
                 <a class="page-number">3</a>
                 <a class="page-number"><i class="fas fa-chevron-right"></i></a>
             </div>
+
+             <!-- Comment Section -->
+             <div class="comment-section">
+                <h3 class="comment-section-title">Comments <span class="comment-count">(0)</span></h3>
+                
+                <!-- Comment Form -->
+                <div class="comment-form-container">
+                    <form id="commentForm" class="comment-form">
+                        <div class="form-group">
+                            <input type="text" id="commenterName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="commentText" placeholder="Write your comment here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn comment-submit">Post Comment</button>
+                    </form>
+                </div>
+                
+                <!-- Comments List -->
+                <div class="comments-list">
+                    <!-- Comments will be added here dynamically -->
+                </div>
+            </div>
         </div>
     </main>
 
@@ -436,5 +460,6 @@
     <!-- JavaScript Files -->
     <script src="../js/main.js"></script>
     <script src="../js/animations.js"></script>
+    <script src="../js/blog-comments.js"></script>
 </body>
 </html>

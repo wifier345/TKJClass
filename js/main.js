@@ -1094,3 +1094,172 @@ window.addEventListener('click', function(e) {
         document.body.style.overflow = '';
     }
 });
+
+// Like/Dislike functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize like/dislike system
+    initLikeDislikeSystem();
+});
+
+function initLikeDislikeSystem() {
+    // Get all like and dislike buttons
+    const likeButtons = document.querySelectorAll('.like-btn');
+    const dislikeButtons = document.querySelectorAll('.dislike-btn');
+    
+    // Load interaction data from localStorage
+    const interactionData = loadInteractionData();
+    
+    // Initialize counters for each item
+    initializeCounters(interactionData);
+    
+    // Add event listeners to like buttons
+    likeButtons.forEach(button => {
+        const itemType = button.getAttribute('data-type');
+        const itemId = button.getAttribute('data-id');
+        const itemKey = `${itemType}-${itemId}`;
+        
+        // Set active state if user has already liked this item
+        if (interactionData[itemKey] === 'like') {
+            button.classList.add('active');
+        }
+        
+        button.addEventListener('click', function() {
+            handleInteraction(this, 'like', itemType, itemId, interactionData);
+        });
+    });
+    
+    // Add event listeners to dislike buttons
+    dislikeButtons.forEach(button => {
+        const itemType = button.getAttribute('data-type');
+        const itemId = button.getAttribute('data-id');
+        const itemKey = `${itemType}-${itemId}`;
+        
+        // Set active state if user has already disliked this item
+        if (interactionData[itemKey] === 'dislike') {
+            button.classList.add('active');
+        }
+        
+        button.addEventListener('click', function() {
+            handleInteraction(this, 'dislike', itemType, itemId, interactionData);
+        });
+    });
+}
+
+function loadInteractionData() {
+    // Load user interaction data from localStorage
+    const savedData = localStorage.getItem('userInteractions');
+    return savedData ? JSON.parse(savedData) : {};
+}
+
+function saveInteractionData(data) {
+    // Save user interaction data to localStorage
+    localStorage.setItem('userInteractions', JSON.stringify(data));
+}
+
+function loadCounterData() {
+    // Load counter data from localStorage
+    const savedData = localStorage.getItem('interactionCounters');
+    return savedData ? JSON.parse(savedData) : {};
+}
+
+function saveCounterData(data) {
+    // Save counter data to localStorage
+    localStorage.setItem('interactionCounters', JSON.stringify(data));
+}
+
+function initializeCounters(interactionData) {
+    // Load counter data
+    const counterData = loadCounterData();
+    
+    // Initialize like counters
+    document.querySelectorAll('.like-btn').forEach(button => {
+        const itemType = button.getAttribute('data-type');
+        const itemId = button.getAttribute('data-id');
+        const itemKey = `${itemType}-${itemId}`;
+        const countElement = button.querySelector('.like-count');
+        
+        // Set counter value from stored data or default to 0
+        countElement.textContent = counterData[itemKey]?.likes || 0;
+    });
+    
+    // Initialize dislike counters
+    document.querySelectorAll('.dislike-btn').forEach(button => {
+        const itemType = button.getAttribute('data-type');
+        const itemId = button.getAttribute('data-id');
+        const itemKey = `${itemType}-${itemId}`;
+        const countElement = button.querySelector('.dislike-count');
+        
+        // Set counter value from stored data or default to 0
+        countElement.textContent = counterData[itemKey]?.dislikes || 0;
+    });
+}
+
+function handleInteraction(button, action, itemType, itemId, interactionData) {
+    const itemKey = `${itemType}-${itemId}`;
+    const counterData = loadCounterData();
+    
+    // Initialize counter data for this item if it doesn't exist
+    if (!counterData[itemKey]) {
+        counterData[itemKey] = { likes: 0, dislikes: 0 };
+    }
+    
+    // Get the opposite action button
+    const oppositeAction = action === 'like' ? 'dislike' : 'like';
+    const oppositeButton = button.parentElement.querySelector(`.${oppositeAction}-btn`);
+    
+    // Check if user has already interacted with this item
+    const previousAction = interactionData[itemKey];
+    
+    if (previousAction === action) {
+        // User is clicking the same button again - remove their vote
+        delete interactionData[itemKey];
+        button.classList.remove('active');
+        
+        // Decrement counter
+        counterData[itemKey][`${action}s`]--;
+        button.querySelector(`.${action}-count`).textContent = counterData[itemKey][`${action}s`];
+    } 
+    else {
+        // User is voting for the first time or changing their vote
+        
+        // If user previously voted the opposite, remove that vote
+        if (previousAction === oppositeAction) {
+            oppositeButton.classList.remove('active');
+            counterData[itemKey][`${oppositeAction}s`]--;
+            oppositeButton.querySelector(`.${oppositeAction}-count`).textContent = counterData[itemKey][`${oppositeAction}s`];
+        }
+        
+        // Record new vote
+        interactionData[itemKey] = action;
+        button.classList.add('active');
+        
+        // Increment counter
+        counterData[itemKey][`${action}s`]++;
+        button.querySelector(`.${action}-count`).textContent = counterData[itemKey][`${action}s`];
+    }
+    
+    // Save updated data
+    saveInteractionData(interactionData);
+    saveCounterData(counterData);
+    
+    // Show a small popup notification
+    showNotification(`You ${action}d this ${itemType}!`);
+}
+
+function showNotification(message) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'popup-notification';
+    notification.textContent = message;
+    
+    // Add to document
+    document.body.appendChild(notification);
+    
+    // Remove after animation completes
+    setTimeout(() => {
+        notification.classList.add('closing');
+        setTimeout(() => {
+            notification.remove();
+        }, 500);
+    }, 2000);
+}
