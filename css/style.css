@@ -64,31 +64,35 @@ img {
 }
 
 .section#class-photos {
-    background: linear-gradient(135deg, #61b0e3 0%, #1a5d8a 100%) !important;
+    background: linear-gradient(135deg, #61b0e3 0%, #1a5d8a 100%);
+    animation: gradientBG 15s ease infinite;
 }
 
 .section#gallery {
-    background: linear-gradient(135deg, #b5b4b4 0%, #666666 100%) !important;
+    background: linear-gradient(135deg, #b5b4b4 0%, #666666 100%);
+    animation: gradientBG 15s ease infinite;
 }
 
 .section#contact {
-    background: linear-gradient(135deg, #333333 0%, #000000 100%) !important;
+    background: linear-gradient(135deg, #333333 0%, #000000 100%);
+    animation: gradientBG 15s ease infinite;
 }
 
 .section#testimonials {
-    background: linear-gradient(135deg, #61b0e3 0%, #1a5d8a 100%) !important;
+    background: linear-gradient(135deg, #61b0e3 0%, #1a5d8a 100%);
+    animation: gradientBG 15s ease infinite;
+    
 }
 
 .section#about {
-    background: linear-gradient(135deg, #f4f4f4 0%, #c0c0c0 100%) !important;
+    background: linear-gradient(135deg, #f4f4f4 0%, #c0c0c0 100%);
+    animation: gradientBG 15s ease-in-out infinite;
 }
 
-.section#blogs {
-    background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%) !important;
-}
-
-.section#pkl {
-    background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%) !important;
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .section-title {
