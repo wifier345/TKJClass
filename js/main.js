@@ -1105,6 +1105,65 @@ if (passwordModalClose) {
     });
 }
 
+// Portfolio Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const portfolioModal = document.getElementById('portfolio-modal');
+    const portfolioModalImg = document.getElementById('portfolio-modal-img');
+    const portfolioModalTitle = document.getElementById('portfolio-modal-title');
+    const modalClose = document.querySelector('#portfolio-modal .modal-close');
+    
+    // Function to check if device is mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+    
+    portfolioItems.forEach(item => {
+        // For mobile: show modal on click of preview button
+        const previewBtn = item.querySelector('.portfolio-preview-btn');
+        if (previewBtn) {
+            previewBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event bubbling
+                openPortfolioModal(item);
+            });
+        }
+        
+        // For desktop: show modal on hover (implemented in CSS)
+        // For both: also allow clicking the entire card
+        item.addEventListener('click', function() {
+            openPortfolioModal(item);
+        });
+    });
+    
+    function openPortfolioModal(item) {
+        const title = item.getAttribute('data-title');
+        const imageSrc = item.getAttribute('data-image');
+        
+        portfolioModalImg.src = imageSrc;
+        portfolioModalTitle.textContent = title;
+        portfolioModal.style.display = 'block';
+        
+        // Prevent body scrolling when modal is open
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Close modal when clicking on X
+    if (modalClose) {
+        modalClose.addEventListener('click', function() {
+            portfolioModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+    }
+    
+    // Close modal when clicking outside the content
+    window.addEventListener('click', function(e) {
+        if (e.target === portfolioModal) {
+            portfolioModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+    });
+});
+
 // Close password modal when clicking outside the content
 window.addEventListener('click', function(e) {
     if (e.target === passwordModal) {
