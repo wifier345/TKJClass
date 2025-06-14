@@ -533,18 +533,11 @@ header#help-header h1 {
     transition: color 0.3s ease;
     display: inline-block;
     position: relative;
+    margin-left: 5px;
 }
 
 .pkl-cell a:hover {
     color: var(--secondary-color);
-}
-
-.pkl-cell a:after {
-    content: '\f3c5';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    margin-left: 8px;
-    font-size: 14px;
 }
 
 
